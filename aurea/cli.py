@@ -139,11 +139,6 @@ def display_donation_screen():
     print(f"{colors.cyan('║')}{colors.bold(f'      45984313318':^{width})}{colors.cyan('║')}")
     print(f"{colors.cyan('║')}{' ':^{width}}{colors.cyan('║')}")
         
-    github_lbl = t('ui.donation.github')
-    print(f"{colors.cyan('║')}{colors.yellow(f'{github_lbl:^{width}}')}{colors.cyan('║')}")
-    print(f"{colors.cyan('║')}{colors.bold(f'      https://github.com/sponsors/js-victr':^{width})}{colors.cyan('║')}")
-    print(f"{colors.cyan('║')}{' ':^{width}}{colors.cyan('║')}")
-    
     print(colors.cyan(f"╚{top_line}╝"))
     
     ui.pause()
