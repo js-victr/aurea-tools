@@ -131,12 +131,14 @@ def display_donation_screen():
     
     linktree_lbl = t('ui.donation.linktree')
     print(f"{colors.cyan('║')}{colors.yellow(f'{linktree_lbl:^{width}}')}{colors.cyan('║')}")
-    print(f"{colors.cyan('║')}{colors.bold(f'      https://js-victr.github.io/aurea-tools/#donate':^{width})}{colors.cyan('║')}")
+    link_line = f"{'      https://js-victr.github.io/aurea-tools/#donate':^{width}}"
+    print(f"{colors.cyan('║')}{colors.bold(link_line)}{colors.cyan('║')}")
     print(f"{colors.cyan('║')}{' ':^{width}}{colors.cyan('║')}")
     
     pix_lbl = t('ui.donation.pix')
     print(f"{colors.cyan('║')}{colors.yellow(f'{pix_lbl:^{width}}')}{colors.cyan('║')}")
-    print(f"{colors.cyan('║')}{colors.bold(f'      45984313318':^{width})}{colors.cyan('║')}")
+    pix_line = f"{'      45984313318':^{width}}"
+    print(f"{colors.cyan('║')}{colors.bold(pix_line)}{colors.cyan('║')}")
     print(f"{colors.cyan('║')}{' ':^{width}}{colors.cyan('║')}")
         
     print(colors.cyan(f"╚{top_line}╝"))
@@ -152,16 +154,23 @@ def display_help_menu():
         
         top_line = "═" * width
         print(colors.cyan(f"╔{top_line}╗"))
-        title = " ⚙️  SETUP & CONFIGURATION GUIDES ⚙️ "
-        print(f"{colors.cyan('║')}{colors.bold(colors.yellow(f'{title:^{width}}'))}{colors.cyan('║')}")
+        
+        title_text = " ⚙️  SETUP & CONFIGURATION GUIDES ⚙️ "
+        title_line = f"{title_text:^{width}}"
+        print(f"{colors.cyan('║')}{colors.bold(colors.yellow(title_line))}{colors.cyan('║')}")
         print(f"{colors.cyan('║')}{' ':^{width}}{colors.cyan('║')}")
         
-        print(f"{colors.cyan('║')}{colors.green(f'   [1] NetBox IPAM Sync Configuration':<{width})}{colors.cyan('║')}")
-        print(f"{colors.cyan('║')}{colors.green(f'   [2] Multi-Vendor SSH & RouterOS API Setup':<{width})}{colors.cyan('║')}")
-        print(f"{colors.cyan('║')}{colors.green(f'   [3] NetFlow v5 Exporter Router Config (MikroTik/Cisco)':<{width})}{colors.cyan('║')}")
-        print(f"{colors.cyan('║')}{colors.green(f'   [4] Active Traffic Flow (Socket Tracking) Permissions':<{width})}{colors.cyan('║')}")
+        opt1 = f"{'   [1] NetBox IPAM Sync Configuration':<{width}}"
+        print(f"{colors.cyan('║')}{colors.green(opt1)}{colors.cyan('║')}")
+        opt2 = f"{'   [2] Multi-Vendor SSH & RouterOS API Setup':<{width}}"
+        print(f"{colors.cyan('║')}{colors.green(opt2)}{colors.cyan('║')}")
+        opt3 = f"{'   [3] NetFlow v5 Exporter Router Config (MikroTik/Cisco)':<{width}}"
+        print(f"{colors.cyan('║')}{colors.green(opt3)}{colors.cyan('║')}")
+        opt4 = f"{'   [4] Active Traffic Flow (Socket Tracking) Permissions':<{width}}"
+        print(f"{colors.cyan('║')}{colors.green(opt4)}{colors.cyan('║')}")
         print(f"{colors.cyan('║')}{' ':^{width}}{colors.cyan('║')}")
-        print(f"{colors.cyan('║')}{colors.dim(f'   [B] Back to Main Menu':<{width})}{colors.cyan('║')}")
+        optb = f"{'   [B] Back to Main Menu':<{width}}"
+        print(f"{colors.cyan('║')}{colors.dim(optb)}{colors.cyan('║')}")
         print(colors.cyan(f"╚{top_line}╝"))
         
         try:
@@ -176,7 +185,9 @@ def display_help_menu():
         print(colors.cyan(f"╔{top_line}╗"))
         
         if choice == "1":
-            print(f"{colors.cyan('║')}{colors.bold(colors.yellow(f' 1. NETBOX IPAM SYNC CONFIGURATION ':{width}))}{colors.cyan('║')}")
+            hdr_text = " 1. NETBOX IPAM SYNC CONFIGURATION "
+            hdr = f"{hdr_text:^{width}}"
+            print(f"{colors.cyan('║')}{colors.bold(colors.yellow(hdr))}{colors.cyan('║')}")
             print(f"{colors.cyan('║')}{' ':^{width}}{colors.cyan('║')}")
             
             lines = [
@@ -195,10 +206,13 @@ def display_help_menu():
                 "   and choose the \"Sync to NetBox\" option to automate the upload."
             ]
             for line in lines:
-                print(f"{colors.cyan('║')}{colors.green(f'  {line:<{width-2}}')}{colors.cyan('║')}")
+                padded = f"  {line:<{width-2}}"
+                print(f"{colors.cyan('║')}{colors.green(padded)}{colors.cyan('║')}")
                 
         elif choice == "2":
-            print(f"{colors.cyan('║')}{colors.bold(colors.yellow(f' 2. MULTI-VENDOR SSH & ROUTER API SETUP ':{width}))}{colors.cyan('║')}")
+            hdr_text = " 2. MULTI-VENDOR SSH & ROUTER API SETUP "
+            hdr = f"{hdr_text:^{width}}"
+            print(f"{colors.cyan('║')}{colors.bold(colors.yellow(hdr))}{colors.cyan('║')}")
             print(f"{colors.cyan('║')}{' ':^{width}}{colors.cyan('║')}")
             
             lines = [
@@ -218,10 +232,13 @@ def display_help_menu():
                 "    to execute 'show' commands without prompt blocks."
             ]
             for line in lines:
-                print(f"{colors.cyan('║')}{colors.green(f'  {line:<{width-2}}')}{colors.cyan('║')}")
+                padded = f"  {line:<{width-2}}"
+                print(f"{colors.cyan('║')}{colors.green(padded)}{colors.cyan('║')}")
                 
         elif choice == "3":
-            print(f"{colors.cyan('║')}{colors.bold(colors.yellow(f' 3. NETFLOW V5 ROUTER CONFIGURATION ':{width}))}{colors.cyan('║')}")
+            hdr_text = " 3. NETFLOW V5 ROUTER CONFIGURATION "
+            hdr = f"{hdr_text:^{width}}"
+            print(f"{colors.cyan('║')}{colors.bold(colors.yellow(hdr))}{colors.cyan('║')}")
             print(f"{colors.cyan('║')}{' ':^{width}}{colors.cyan('║')}")
             
             lines = [
@@ -245,10 +262,13 @@ def display_help_menu():
                 "  ip flow-export version 5"
             ]
             for line in lines:
-                print(f"{colors.cyan('║')}{colors.green(f'  {line:<{width-2}}')}{colors.cyan('║')}")
+                padded = f"  {line:<{width-2}}"
+                print(f"{colors.cyan('║')}{colors.green(padded)}{colors.cyan('║')}")
                 
         elif choice == "4":
-            print(f"{colors.cyan('║')}{colors.bold(colors.yellow(f' 4. ACTIVE TRAFFIC FLOW CAPABILITIES ':{width}))}{colors.cyan('║')}")
+            hdr_text = " 4. ACTIVE TRAFFIC FLOW CAPABILITIES "
+            hdr = f"{hdr_text:^{width}}"
+            print(f"{colors.cyan('║')}{colors.bold(colors.yellow(hdr))}{colors.cyan('║')}")
             print(f"{colors.cyan('║')}{' ':^{width}}{colors.cyan('║')}")
             
             lines = [
@@ -265,10 +285,13 @@ def display_help_menu():
                 "  - Capturing outbound paths uses local netstat/ss commands."
             ]
             for line in lines:
-                print(f"{colors.cyan('║')}{colors.green(f'  {line:<{width-2}}')}{colors.cyan('║')}")
+                padded = f"  {line:<{width-2}}"
+                print(f"{colors.cyan('║')}{colors.green(padded)}{colors.cyan('║')}")
                 
         else:
-            print(f"{colors.cyan('║')}{colors.red(f'  Invalid selection. Please choose 1-4 or B.':<{width})}{colors.cyan('║')}")
+            invalid_text = "  Invalid selection. Please choose 1-4 or B."
+            invalid = f"{invalid_text:<{width}}"
+            print(f"{colors.cyan('║')}{colors.red(invalid)}{colors.cyan('║')}")
             
         print(f"{colors.cyan('║')}{' ':^{width}}{colors.cyan('║')}")
         print(colors.cyan(f"╚{top_line}╝"))
