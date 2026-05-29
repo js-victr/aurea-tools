@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aurea-tools"
+version = "2.0.0"
+description = "Advanced Network & Security Suite for ISP/NOC professionals"
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.10"
+authors = [
+    { name = "josé victor b. s." }
+]
+keywords = [
+    "network", "security", "bgp", "isp", "noc", "diagnostics",
+    "traceroute", "dns", "rpki", "cybersecurity"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: System Administrators",
+    "Intended Audience :: Telecommunications Industry",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: System :: Networking",
+    "Topic :: System :: Networking :: Monitoring",
+    "Topic :: Security",
+]
+
+[project.optional-dependencies]
+speedtest = ["speedtest-cli"]
+premium = ["speedtest-cli"]
+
+[project.scripts]
+aurea = "aurea.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/js-victr/aurea-tools"
+Repository = "https://github.com/js-victr/aurea-tools"
+Issues = "https://github.com/js-victr/aurea-tools/issues"
+
+[tool.setuptools.packages.find]
+include = ["aurea*"]
+
+[tool.setuptools.package-data]
+aurea = ["locales/*.json"]

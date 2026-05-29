@@ -1,0 +1,442 @@
+{
+    "ui": {
+        "press_enter": "Pressione ENTER para voltar ao menu...",
+        "default": "padrão",
+        "contribute": "Contribua com o projeto:",
+        "system": "Sistema",
+        "search_result": "Resultado da busca por: \"{query}\"",
+        "no_results": "Nenhuma ferramenta encontrada.",
+        "recent": "Recentes",
+        "search_hint": "[/] Buscar ferramenta",
+        "exit_hint": "[0] Sair",
+        "choose_option": "Escolha uma opção (número ou /busca): ",
+        "choose_or_back": "Digite o número ou ENTER para voltar: ",
+        "invalid_option": "Opção '{option}' inválida. Tente /busca ou um número de 1-{max}.",
+        "exiting": "Encerrando a Aurea. Obrigado!",
+        "premium_badge": "PRO",
+        "tier_locked": "Este recurso requer Aurea Premium.",
+        "enter_ip": "Digite o IP ou Domínio",
+        "enter_ipv6": "Digite o IPv6 ou Domínio",
+        "enter_domain": "Digite o domínio",
+        "enter_port": "Digite a porta (ex: 80, 443, 8080)",
+        "enter_mac": "Digite o MAC (ex: 00:1A:2B... ou 00-1A-2B...)",
+        "enter_cidr": "Digite a Rede/IP com CIDR",
+        "enter_url": "Digite o URL ou Domínio",
+        "enter_prefix": "Prefixo BGP (ex: 138.122.152.0/22)",
+        "enter_asn": "ASN de Origem (ex: 264321)",
+        "packet_count": "Quantidade de pacotes",
+        "password_length": "Tamanho da senha (recomendado 16)",
+        "test_domain": "Domínio para teste",
+        "cancelled": "Operação cancelada. Nenhum dado informado.",
+        "ctrl_c_stop": "Pressione Ctrl+C para parar.",
+        "choose_category": "Escolha uma Categoria (número, atalho ou /busca): ",
+        "choose_submenu": "Escolha uma Ferramenta (número ou [B] Voltar): ",
+        "back_hint": "[B] Voltar ao Menu Principal",
+        "donate_hint": "[D] Apoiar o Projeto (Doações)",
+        "donation": {
+            "title": "APOIE O DESENVOLVIMENTO DO AUREATOOLS",
+            "desc1": "AureaTools é 100% gratuito, open source e livre. Ele ajuda",
+            "desc2": "engenheiros de rede e profissionais de NOC no mundo todo.",
+            "how_to": "»» Como apoiar o projeto:",
+            "linktree": "🔗 Linktree de Doações / Donation Hub:",
+            "pix": "🔑 Chave Pix (Brasil):",
+            "github": "⭐ GitHub Sponsors:"
+        }
+    },
+    "tools": {
+        "cat": {
+            "diagnostics": "DIAGNÓSTICO & CONECTIVIDADE",
+            "services": "SERVIÇOS IP & SEGURANÇA WEB",
+            "bgp": "ENGENHARIA BGP & ROTEAMENTO",
+            "automation": "UTILITÁRIOS & AUTOMAÇÃO DE NOC"
+        },
+        "info_local_network": {
+            "name": "IP Local & Interfaces",
+            "title": "INFORMAÇÕES DE ENDEREÇAMENTO (IPv4 / IPv6)",
+            "mapping": "MAPEANDO INTERFACES DE ROTEAMENTO...",
+            "ipv4_out": "IPv4 de Saída (Gateway)",
+            "ipv6_out": "IPv6 de Saída (SLAAC)",
+            "no_ipv4": "Sem rota nativa.",
+            "no_ipv6": "Desativado ou sem rota.",
+            "border": "CONSULTA DE BORDA (NAT / IP PÚBLICO):",
+            "pub_ip": "IP Público Externo",
+            "pub_fail": "Falha de resolução.",
+            "telemetry": "TELEMETRIA DO SISTEMA OPERACIONAL:",
+            "mobile": "Ambiente Mobile : Termux / Android OS Detectado.",
+            "wifi_radio": "Rádio Wi-Fi",
+            "termux_hint": "! Aviso: Instale o app 'Termux:API' e execute 'pkg install termux-api' para ler a placa Wi-Fi.",
+            "platform": "Plataforma Host"
+        },
+        "lan_scan": {
+            "name": "Varredura de Dispositivos LAN",
+            "title": "VARREDURA DE DISPOSITIVOS NA REDE LOCAL",
+            "searching": "BUSCANDO DISPOSITIVOS NA REDE LOCAL (ARP)...",
+            "ip_col": "IP Address",
+            "mac_col": "MAC Address",
+            "error": "Erro ao buscar dispositivos no cache ARP do sistema.",
+            "empty": "Nenhum dispositivo adjacente detectado (cache vazio)."
+        },
+        "ping_ipv4": {
+            "name": "Ping IPv4",
+            "title": "TESTE DE COMUNICAÇÃO — EXCLUSIVO IPv4",
+            "firing": "Disparando {count} pacotes IPv4 contra {target}..."
+        },
+        "ping_ipv6": {
+            "name": "Ping IPv6",
+            "title": "TESTE DE COMUNICAÇÃO — EXCLUSIVO IPv6",
+            "firing": "Disparando {count} pacotes IPv6 contra {target}..."
+        },
+        "traceroute": {
+            "name": "Traceroute de Rede",
+            "title": "MAPEAMENTO DE ROTA (TRACEROUTE)",
+            "mapping": "Mapeando rota para {target} (Aguarde)...",
+            "not_found": "Comando traceroute não encontrado.",
+            "termux_hint": "Execute o comando abaixo para instalar:",
+            "icmp_hint": "DICA: Roteadores que respondem com * podem estar bloqueando ICMP ou filtrando tráfego."
+        },
+        "port_check": {
+            "name": "Teste de Porta TCP",
+            "title": "TESTE DE PORTA TCP",
+            "testing": "Testando conexão TCP em {host}:{port}...",
+            "open": "PORTA {port} ESTÁ ABERTA E RESPONDENDO.",
+            "closed": "PORTA {port} FECHADA OU FILTRADA.",
+            "error": "Erro ao testar porta: {error}"
+        },
+        "speedtest": {
+            "name": "Teste de Banda (Speedtest)",
+            "title": "TESTE DE BANDA (SPEEDTEST)",
+            "not_installed": "Módulo não instalado. Execute: pip install speedtest-cli",
+            "finding_server": "Buscando melhor servidor... aguarde.",
+            "testing_dl": "Testando Download...",
+            "testing_ul": "Testando Upload...",
+            "result": "DOWNLOAD: {dl:.2f} Mbps | UPLOAD: {up:.2f} Mbps | PING: {ping} ms",
+            "fail": "Falha no teste: {error}"
+        },
+        "asn_lookup": {
+            "name": "IP Público & ASN",
+            "title": "CONSULTA DE SAÍDA PÚBLICA E ASN (API IP-API)",
+            "searching": "Buscando dados de saída da rede atual...",
+            "pub_ip": "IP Público:",
+            "isp": "Operadora:",
+            "asn": "ASN:",
+            "location": "Localidade:",
+            "fail": "API retornou falha: {msg}",
+            "error": "Falha na comunicação: {error}"
+        },
+        "mtu_test": {
+            "name": "Teste de MTU & Fragmentação",
+            "title": "TESTE DE FRAGMENTAÇÃO E MTU (PATH MTU DISCOVERY)",
+            "sending": "Enviando pacotes (DF) para {target}...",
+            "success": "SUCESSO: Payload {size}B passou (MTU de Rota: {mtu})",
+            "fragmented": "FRAGMENTOU: Payload {size}B bloqueado."
+        },
+        "http_check": {
+            "name": "Teste de Portal Cativo HTTP",
+            "title": "TESTE DE NAVEGAÇÃO HTTP",
+            "testing": "Fazendo requisição para {url}...",
+            "redirect": "REDIRECIONAMENTO DETECTADO! Desviado para: {url}",
+            "success": "NAVEGAÇÃO LIVRE: A página carregou corretamente.",
+            "unexpected": "CONEXÃO ESTABELECIDA, MAS CONTEÚDO INESPERADO.",
+            "fail": "Falha ao tentar navegar (HTTP): {error}"
+        },
+        "wifi_monitor": {
+            "name": "Monitor Wi-Fi RSSI ao Vivo",
+            "title": "MONITOR DE SINAL WI-FI EM TEMPO REAL (WALK-TEST)",
+            "running": "EXECUTANDO MONITOR DE SINAL WI-FI...",
+            "header": "AUREA MONITOR WI-FI AVANÇADO  (Ctrl+C para sair)",
+            "bssid": "BSSID Ativo (MAC do Nó):",
+            "freq": "Frequência / Banda:",
+            "signal": "Nível de Sinal (RSSI):",
+            "excellent": "Excelente",
+            "moderate": "Moderado",
+            "critical": "Crítico",
+            "disconnected": "Desconectado / Aguardando Sinal",
+            "stopped": "Monitoramento encerrado."
+        },
+        "cdn_benchmark": {
+            "name": "Teste de Latência CDN & Apps",
+            "title": "BENCHMARK DE LATÊNCIA (CDNs)",
+            "service": "Serviço",
+            "status": "Status",
+            "latency": "Latência",
+            "online": "ONLINE",
+            "fail": "FALHA",
+            "no_response": "Sem Resposta"
+        },
+        "dns_benchmark": {
+            "name": "DNS Benchmark Local",
+            "title": "DNS BENCHMARK LOCAL",
+            "desc": "Mede o tempo real de resolução em servidores globais e no gateway da sua rede.",
+            "server": "Servidor DNS",
+            "time": "Tempo de Resolução",
+            "gateway_label": "DNS Atual (Gateway)",
+            "timeout": "Timeout / Sem Resposta",
+            "tip": "DICA: O Gateway Local deve idealmente responder mais rápido que os globais."
+        },
+        "dnssec": {
+            "name": "Validação DNSSEC",
+            "title": "CHECKUP E VALIDAÇÃO DE DNSSEC",
+            "test_local": "1. Testando validação de DNSSEC do Servidor Local...",
+            "no_internet": "ERRO: O dispositivo não está conectando à internet.",
+            "no_validate": "ALERTA: O DNS atual NÃO valida DNSSEC! (Aceitou corrompida)",
+            "validates": "SEGURO: O DNS atual VALIDA DNSSEC corretamente!",
+            "comm_fail": "AVISO: Falha de comunicação com o domínio de teste seguro.",
+            "test_external": "2. Consulta Externa de DNSSEC (Google DNS)...",
+            "has_ds": "Domínio {domain} possui registros de segurança (DS)!",
+            "authenticated": "Autenticado: Cadeia validada.",
+            "no_dnssec": "Domínio NÃO possui criptografia DNSSEC ativa.",
+            "api_fail": "Falha ao consultar a API: {error}"
+        },
+        "traffic_monitor": {
+            "name": "Monitor de Tráfego & ASN",
+            "title": "ANÁLISE DE TRÁFEGO EM TEMPO REAL (MONITOR DE FLUXO E ASN)",
+            "running": "EXECUTANDO ANÁLISE DE TRÁFEGO...",
+            "mapping": "Mapeando fluxo de dados... (Pressione Ctrl+C para parar)",
+            "header_active": "AUREA NET ATIVA | Gravando em: {file} | (Ctrl+C para parar)",
+            "mobile_warning": "[!] MODO MOBILE: Devido à segurança do Android (sem root), apenas o tráfego deste terminal será visível. Desculpe.",
+            "stopped": "Captura interrompida pelo usuário.",
+            "total": "Total de {count} conexões documentadas e salvas.",
+            "file_saved": "Arquivo gerado: {file}",
+            "iproute_error": "Erro: Pacote iproute2 não encontrado."
+        },
+        "ipam": {
+            "name": "Calculadora IPAM & Subnetting",
+            "title": "CALCULADORA IPAM E SUBNETTING AVANÇADA",
+            "input_hint": "Insira o IP com a máscara CIDR (Ex: 192.168.10.0/24)",
+            "analysis": "ANÁLISE DE ROTEAMENTO: {network}",
+            "note_ip": "NOTA: O IP informado ({ip}) pertence à rede {network}",
+            "version": "Versão IP:",
+            "network": "Rede:",
+            "mask": "Máscara:",
+            "binary": "Binário Mask:",
+            "wildcard": "Wildcard:",
+            "broadcast": "Broadcast:",
+            "total_hosts": "Total Hosts:",
+            "usable_range": "Range Útil:",
+            "subnet_suggest": "SUGESTÃO DE SUBNETTING:",
+            "dividing": "Dividindo em /{prefix}: {count} redes criadas.",
+            "example": "Exemplo das 2 primeiras:",
+            "subnet_tip": "Dica: Use /{prefix} para segmentar departamentos.",
+            "too_small": "Rede muito pequena para subdividir sem perder endereços.",
+            "block_type": "Tipo Bloco:",
+            "private": "Privado (LAN)",
+            "public": "Público (Internet)",
+            "ptr": "Ptr Record:",
+            "invalid": "Entrada inválida: {error}"
+        },
+        "banner_grab": {
+            "name": "Banner Grabbing",
+            "title": "BANNER GRABBING & FINGERPRINTING",
+            "desc": "Identifica a versão do daemon/servidor rodando por trás de uma porta TCP aberta.",
+            "scanning": "Iniciando varredura em {host}:{port}...",
+            "closed": "Porta fechada ou filtrada por Firewall.",
+            "connected": "Conexão estabelecida. Coletando banner...",
+            "captured": "--- BANNER CAPTURADO ---",
+            "no_banner": "Serviço não retornou um banner legível.",
+            "fail": "Falha ao inspecionar serviço: {error}"
+        },
+        "spoofing_audit": {
+            "name": "Auditor de Spoofing DNS",
+            "title": "AUDITOR DE SPOOFING E PHISHING (DNS GUARD)",
+            "desc": "Mapeando a blindagem do domínio contra envio de e-mails falsos...",
+            "querying": "Consultando registros de segurança na zona de DNS...",
+            "spf_found": "SPF ENCONTRADO:",
+            "spf_hard": "FORTE (Hardfail) — E-mails não autorizados são rejeitados.",
+            "spf_soft": "MODERADO (Softfail) — E-mails falsos caem no Spam.",
+            "spf_neutral": "CRÍTICO (Neutro/Permissivo) — Domínio não protegido!",
+            "spf_missing": "SPF AUSENTE: Qualquer um pode falsificar e-mails deste domínio!",
+            "spf_fail": "Falha ao checar SPF: {error}",
+            "dmarc_found": "DMARC ENCONTRADO:",
+            "dmarc_reject": "FORTE — Falsificações são bloqueadas sumariamente.",
+            "dmarc_quarantine": "MODERADO — Falsificações vão para quarentena/spam.",
+            "dmarc_none": "ALERTA — Modo monitoramento apenas. Spoofing ainda possível.",
+            "dmarc_missing": "DMARC AUSENTE: Não há diretrizes de conformidade configuradas.",
+            "dmarc_fail": "Falha ao checar DMARC: {error}",
+            "dkim_note": "* Nota: DKIM não é testado aqui pois requer o seletor específico do servidor."
+        },
+        "ip_intel": {
+            "name": "IP Intelligence & Reconhecimento",
+            "title": "IP INTELLIGENCE & ASN LOOKUP",
+            "desc": "Obtém geolocalização, operadora e dados de roteamento BGP (ASN) de qualquer IP.",
+            "private_warning": "O endereço {ip} é de uso local/privado e não possui registro público.",
+            "querying": "Consultando base de dados global de roteamento...",
+            "dossier": "DOSSIÊ DO ENDEREÇO IP: {ip}",
+            "isp": "Operadora / ISP:",
+            "org": "Organização:",
+            "asn": "ASN (BGP):",
+            "location": "Localização:",
+            "fail": "Consulta rejeitada pela API: {msg}",
+            "error": "Falha ao consultar o IP: {error}"
+        },
+        "bgp_audit": {
+            "name": "Auditor de Rotas BGP",
+            "title": "AUDITOR BGP PROFISSIONAL"
+        },
+        "sec_headers": {
+            "name": "Scanner de Cabeçalhos HTTP",
+            "title": "SCANNER DE CABEÇALHOS DE SEGURANÇA (HTTP SEC)",
+            "desc": "Analisa a blindagem de um servidor web contra ataques como XSS e Clickjacking.",
+            "analyzing": "Analisando as políticas de segurança de {url}...",
+            "report": "RELATÓRIO DE BLINDAGEM WEB (SECURITY HEADERS)",
+            "server_exposed": "Servidor Exposto: {server}  (Pode facilitar ataques direcionados)",
+            "server_hidden": "Servidor Oculto: A identidade do daemon está protegida.",
+            "score": "Pontuação de Segurança: {score}/{total}",
+            "excellent": "Status: EXCELENTE. O servidor adota as melhores práticas de Defesa Web.",
+            "regular": "Status: REGULAR. Algumas políticas importantes estão ausentes.",
+            "critical": "Status: CRÍTICO. O site está exposto a vetores primários de ataque.",
+            "vulnerable": "Vulnerável",
+            "missing": "Falta proteção: {desc}",
+            "fail": "Falha ao conectar no servidor web: {error}"
+        },
+        "rpki": {
+            "name": "Validador RPKI (BGP)",
+            "title": "VALIDADOR RPKI (BGP)"
+        },
+        "osint_sub": {
+            "name": "OSINT Subdomínios",
+            "title": "OSINT SUBDOMÍNIOS"
+        },
+        "mac_oui": {
+            "name": "Consulta MAC & OUI",
+            "title": "ANALISADOR MAC & OUI",
+            "desc": "Identifica a fabricante do dispositivo a partir do Endereço MAC.",
+            "querying": "Consultando banco de dados IEEE (OUI)...",
+            "found": "Fabricante identificado:",
+            "not_found": "Fabricante não encontrado (MAC inválido ou OUI privado).",
+            "fail": "Falha na conexão: {error}"
+        },
+        "whois": {
+            "name": "Cliente WHOIS Nativo",
+            "title": "CLIENTE WHOIS NATIVO (PORTA 43)",
+            "desc": "Consulta o registro público de um domínio direto na porta 43.",
+            "connecting": "Conectando ao banco de dados WHOIS ({server})...",
+            "data": "DADOS DO REGISTRO",
+            "fail": "Erro de WHOIS: {error}  (Servidor pode não suportar mapeamento direto)"
+        },
+        "password_gen": {
+            "name": "Gerador de Senhas Seguras",
+            "title": "GERADOR DE SENHAS SEGURAS",
+            "desc": "Gera senhas de altíssima entropia para equipamentos e clientes.",
+            "generated": "SENHAS GERADAS LOCALMENTE (Não salvas)",
+            "option": "Opção {n}:",
+            "tip": "DICA: Use o mouse para selecionar e copiar. Nenhuma delas fica em disco."
+        },
+        "port_scanner": {
+            "name": "Escaneador de Portas Multithread",
+            "title": "VARREDURA DE PORTAS (PARALELA)",
+            "desc": "Escanear portas TCP concorrentemente usando pool de threads.",
+            "scanning": "Escaneando {host} nas portas {ports}...",
+            "open": "Porta {port} ({service}) está ABERTA."
+        },
+        "ssl_inspector": {
+            "name": "Inspetor de Certificados SSL/TLS",
+            "title": "DETALHES DO CERTIFICADO SSL/TLS",
+            "desc": "Analisa validade, emissor e chaves de criptografia SSL/TLS.",
+            "subject": "Assunto (CN):",
+            "issuer": "Emissor:",
+            "valid_from": "Válido De:",
+            "valid_to": "Válido Até:",
+            "days_left": "Dias Restantes:",
+            "expired": "EXPIRADO!",
+            "warning": "ATENÇÃO: Expira em menos de 30 dias!"
+        },
+        "mtr": {
+            "name": "MTR Avançado",
+            "title": "MY TRACEROUTE (MTR)",
+            "desc": "Traceroute contínuo com estatísticas de latência e perda por salto.",
+            "header": "Salto | Endereço IP | Perda% | Mín | Média | Máx | Jitter",
+            "stopped": "MTR finalizado pelo usuário."
+        },
+        "peeringdb": {
+            "name": "Consulta PeeringDB",
+            "title": "BUSCA DE REDE NO PEERINGDB",
+            "desc": "Consulta presença de rede em IXPs e Datacenters via API PeeringDB.",
+            "not_found": "Rede AS{asn} não encontrada no PeeringDB.",
+            "policy": "Política de Peering:",
+            "ixps": "Presença em IXPs:",
+            "facs": "Presença em Facilities:"
+        },
+        "looking_glass": {
+            "name": "Looking Glass BGP",
+            "title": "LOOKING GLASS BGP (RIPE RIS)",
+            "desc": "Inspeciona visibilidade de rotas, caminhos e comunidades BGP públicos.",
+            "visibility": "Visibilidade de {target} nos coletores:",
+            "peer_count": "RIS Peers anunciando:"
+        },
+        "community_decoder": {
+            "name": "Decodificador de Communities BGP",
+            "title": "TRADUTOR DE COMMUNITIES BGP",
+            "desc": "Decodifica standard/large communities BGP em descrições humanas.",
+            "decoded": "Community decodificada {community}:"
+        },
+        "dns_prop": {
+            "name": "Verificador de Propagação DNS",
+            "title": "VERIFICADOR DE PROPAGAÇÃO DNS",
+            "desc": "Mapeia propagação de registros DNS em servidores globais em tempo real.",
+            "result": "Servidor: {server:<20} | Tipo: {type:<5} | Resultado: {result}"
+        },
+        "sla_calc": {
+            "name": "Calculadora de SLA & Uptime",
+            "title": "CALCULADORA DE SLA & INDISPONIBILIDADE",
+            "desc": "Calcula tempo limite de indisponibilidade com base no SLA % acordado.",
+            "allowed": "Tempo limite de queda para SLA {sla}%:",
+            "daily": "  - Diário:   {time}",
+            "monthly": "  - Mensal:   {time}",
+            "yearly": "  - Anual:    {time}"
+        },
+        "lan_discovery": {
+            "name": "Auto-Descoberta LAN & NetBox Sync",
+            "title": "AUTO-DESCOBERTA LAN & NETBOX SYNC",
+            "desc": "Varredura concorrente em sub-redes, mapeamento MAC/OUI e sincronização NetBox."
+        },
+        "mikrotik_ssh": {
+            "name": "MikroTik SSH Auditor & NetBox Sync",
+            "title": "AUDITOR MIKROTIK SSH & NETBOX IPAM",
+            "desc": "Acessa roteadores via SSH nativo, mapeia interfaces/IPs/VLANs/vizinhos e envia ao NetBox."
+        },
+        "bgp_agg": {
+            "name": "BGP CIDR Route Aggregator",
+            "title": "OTIMIZADOR E AGREGADOR BGP CIDR",
+            "desc": "Consolida matematicamente múltiplos prefixos de rede sobrepostos ou adjacentes."
+        },
+        "multi_ping": {
+            "name": "Teste de Conectividade Multi-Target",
+            "title": "TESTADOR DE PING MULTI-TARGET",
+            "desc": "Pinga múltiplos hosts em paralelo e exibe estatísticas de latência e perda comparativas."
+        },
+        "config_diff": {
+            "name": "Comparador de Configuração (Diff)",
+            "title": "COMPARADOR DE CONFIGURAÇÃO (DIFF)",
+            "desc": "Compara dois arquivos de configuração lado a lado com destaques coloridos."
+        },
+        "dns_deep_inspector": {
+            "name": "DNS Deep Inspector",
+            "title": "INSPETOR DNS PROFUNDO",
+            "desc": "Realiza consultas profundas em zonas de DNS (A, AAAA, MX, TXT, CNAME, NS, SOA, SPF, DMARC, DNSSEC)."
+        },
+        "device_auditor": {
+            "name": "Auditor Multi-Vendor & NetBox Sync",
+            "title": "AUDITOR MULTI-VENDOR DE EQUIPAMENTOS & NETBOX",
+            "desc": "Conecta via SSH/Telnet a MikroTik, Huawei, Cisco e Juniper, mapeia a topologia e sincroniza com o NetBox."
+        },
+        "dns_hijack": {
+            "name": "Detector de DNS Hijacking",
+            "title": "DETECTOR DE SEQUESTRADO DE DNS",
+            "desc": "Testa se as consultas locais estão sendo interceptadas ou modificadas por resolvedores rogue."
+        },
+        "cgnat_sim": {
+            "name": "Simulador de Esgotamento CGNAT",
+            "title": "SIMULADOR DE EXAUSTÃO DE PORTAS CGNAT",
+            "desc": "Simula tráfego concorrente rápido de sockets para medir o limite de portas e comportamento de NAT."
+        },
+        "nmap_scan": {
+            "name": "Scanner Portas TCP NMAP"
+        },
+        "isp_latency": {
+            "name": "Matriz Latência ISP"
+        },
+        "subnet_planner": {
+            "name": "Planejador Subredes Overlay"
+        }
+    }
+}

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AureaTools — Carrier-Grade NOC & Security Suite</title>
+    <meta name="description" content="AureaTools é uma suíte de rede open-source profissional e integrada para NOC, BGP, diagnóstico de rotas e auditoria de segurança da informação.">
+    
+    <!-- Open Graph SEO -->
+    <meta property="og:title" content="AureaTools — Carrier-Grade NOC & Security Suite">
+    <meta property="og:description" content="Suíte de rede open-source profissional e integrada para NOC, BGP, diagnóstico e auditoria de segurança da informação.">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Grid and Glows -->
+    <div class="terminal-grid"></div>
+    <div class="bg-glow glow-cyan"></div>
+    <div class="bg-glow glow-green"></div>
+
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <i class="fa-solid fa-microchip logo-icon"></i>
+                <span class="logo-text">Aurea<span class="logo-accent">Tools</span></span>
+            </div>
+            <nav class="nav-links">
+                <a href="#features"><i class="fa-solid fa-bolt"></i> Recursos</a>
+                <a href="#docs"><i class="fa-solid fa-book"></i> Documentação</a>
+                <a href="#install"><i class="fa-solid fa-download"></i> Instalar</a>
+                <a href="#donate" class="btn-support"><i class="fa-solid fa-heart"></i> Apoiar</a>
+                <a href="https://github.com/js-victr/aurea-tools" target="_blank" class="nav-github"><i class="fa-brands fa-github"></i> GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <!-- Hero Text -->
+            <div class="hero-text-content">
+                <div class="version-badge">v2.2 NOC Carrier-Grade</div>
+                <h1 class="hero-title">A Inteligência de Rede Que Seu <span class="text-gradient">NOC</span> Precisa.</h1>
+                <p class="hero-subtitle">Uma suíte profissional, integrada e open-source para engenharia BGP, auditoria criptográfica SSL/TLS, mapeamento NetFlow v5 de alta fidelidade e diagnóstico de infraestrutura.</p>
+                
+                <div class="install-fast-box">
+                    <span class="prompt-symbol">$</span>
+                    <input type="text" id="install-command" value="git clone https://github.com/js-victr/aurea-tools.git" readonly>
+                    <button class="btn-copy" onclick="copyInstallCmd()" title="Copiar Comando">
+                        <i id="copy-icon" class="fa-regular fa-copy"></i>
+                    </button>
+                </div>
+                
+                <div class="hero-buttons">
+                    <a href="#docs" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i> Explorar Ferramentas</a>
+                    <a href="https://github.com/js-victr/aurea-tools" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-github"></i> Ver no GitHub</a>
+                </div>
+            </div>
+
+            <!-- Interactive CLI Emulator -->
+            <div class="hero-cli-container">
+                <div class="cli-window">
+                    <div class="cli-header">
+                        <div class="cli-buttons">
+                            <span class="cli-btn btn-red"></span>
+                            <span class="cli-btn btn-yellow"></span>
+                            <span class="cli-btn btn-green"></span>
+                        </div>
+                        <div class="cli-title">aureaflow@noc-router-board:~</div>
+                    </div>
+                    <div class="cli-body" id="cli-screen">
+                        <span class="cli-line comment"># AureaTools CLI Simulator v2.2</span>
+                        <span class="cli-line"><span class="user">aurea@noc</span>:<span class="dir">~</span>$ python -m aurea</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features / Real-time NOC Stats Preview -->
+    <section id="features" class="features-section">
+        <div class="section-header">
+            <h2 class="section-title">Evolução Carrier-Grade & Diagnóstico Ativo</h2>
+            <p class="section-subtitle">Promovendo suas ferramentas de rede diárias a painéis NOC de nível de operadoras de Telecom.</p>
+        </div>
+        
+        <div class="features-grid">
+            <!-- Sparkline Speedometer Card -->
+            <div class="feature-card glass-panel">
+                <div class="feature-icon"><i class="fa-solid fa-chart-line"></i></div>
+                <h3>Throughput Sparkline Speedometer</h3>
+                <p>Monitore taxas de upload/download em tempo real com velocímetros ASCII baseados em deques de medição rápida dos últimos 30 segundos.</p>
+                <div class="mock-terminal">
+                    <span class="mt-title">SPEEDOMETER TELEMETRY</span>
+                    <span class="mt-line">• Velocímetro (30s): [<span class="green">▄▆█▆▄▃      █</span>] (800 Kbps)</span>
+                    <span class="mt-line">• Down Rate: <span class="yellow">500.00 Kbps</span> | Up Rate: <span class="cyan">300.00 Kbps</span></span>
+                </div>
+            </div>
+
+            <!-- SSL/TLS Auditor Card -->
+            <div class="feature-card glass-panel">
+                <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3>SSL Chain & Protocol Auditor</h3>
+                <p>Audite conexões testando ativamente TLS 1.0, 1.1, 1.2 e 1.3. Detecte cifras fracas (RC4, 3DES, MD5) e extraia certificados X.509 completos.</p>
+                <div class="mock-terminal">
+                    <span class="mt-title">SSL CRYPTO AUDIT</span>
+                    <span class="mt-line">• TLSv1.3: <span class="green">SUPORTADO (Recomendado)</span></span>
+                    <span class="mt-line">• Cipher: <span class="green">TLS_AES_256_GCM_SHA384 (FORTE)</span></span>
+                    <span class="mt-line">• Status: <span class="red">INVÁLIDO, EXPIRADO OU NÃO CONFIÁVEL</span></span>
+                </div>
+            </div>
+
+            <!-- SNMP Interface Congestion Card -->
+            <div class="feature-card glass-panel">
+                <div class="feature-icon"><i class="fa-solid fa-network-wired"></i></div>
+                <h3>SNMP Physical Port Congestion</h3>
+                <p>Mapeie índices SNMP físicos de roteadores e switches (IfIndex), monitorando taxas físicas de In/Out com status NOC automático.</p>
+                <div class="mock-terminal">
+                    <span class="mt-title">SNMP INTERFACE PROFILER</span>
+                    <span class="mt-line">IfIndex 1 | In: 1.50 MB | Out: 0.00 MB | <span class="red">CONGESTIONADO (60%)</span></span>
+                    <span class="mt-line">IfIndex 2 | In: 0.00 MB | Out: 1.00 MB | <span class="yellow">CARGA ALTA (40%)</span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Documentation Explorer -->
+    <section id="docs" class="docs-section">
+        <div class="section-header">
+            <h2 class="section-title">Central de Ferramentas Interativa</h2>
+            <p class="section-subtitle">Busque e explore a documentação técnica, propósito e comandos das 31 ferramentas embutidas da Aurea.</p>
+        </div>
+
+        <div class="search-filter-container glass-panel">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="search-input" placeholder="Pesquise por nome, propósito ou palavra-chave (ex: ping, netflow, subnet)...">
+            </div>
+            
+            <div class="category-filters" id="category-filters">
+                <button class="filter-btn active" data-category="all">Todos</button>
+                <button class="filter-btn" data-category="diagnostics"><i class="fa-solid fa-heart-pulse"></i> Diagnostics</button>
+                <button class="filter-btn" data-category="services"><i class="fa-solid fa-server"></i> Services</button>
+                <button class="filter-btn" data-category="bgp"><i class="fa-solid fa-route"></i> BGP & NOC</button>
+                <button class="filter-btn" data-category="automation"><i class="fa-solid fa-gears"></i> Automation</button>
+            </div>
+        </div>
+
+        <div class="tools-grid" id="tools-grid">
+            <!-- Cards will be populated dynamically by app.js -->
+        </div>
+    </section>
+
+    <!-- Installation & Setup Guide -->
+    <section id="install" class="install-section">
+        <div class="section-header">
+            <h2 class="section-title">Instalação & Configuração Rápida</h2>
+            <p class="section-subtitle">Instale dependências e ative a suíte AureaTools em segundos no Windows, Linux ou Termux (Android).</p>
+        </div>
+
+        <div class="install-container glass-panel">
+            <div class="install-steps">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Clonar o Repositório</h4>
+                        <p>Baixe a versão mais recente do código-fonte do GitHub Pages para a sua máquina local.</p>
+                        <pre><code>git clone https://github.com/js-victr/aurea-tools.git
+cd aurea-tools</code></pre>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Instalar Dependências</h4>
+                        <p>Configure as bibliotecas necessárias do Python utilizando o `requirements.txt` integrado.</p>
+                        <pre><code>pip install -r requirements.txt</code></pre>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Iniciar a Suíte</h4>
+                        <p>Execute o módulo principal para abrir a interface gráfica CLI traduzida automaticamente.</p>
+                        <pre><code>python -m aurea</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support and Donation Section -->
+    <section id="donate" class="donate-section">
+        <div class="section-header">
+            <h2 class="section-title">Apoie o Desenvolvimento do Projeto</h2>
+            <p class="section-subtitle">AureaTools é mantido 100% livre, aberto e livre de anúncios. Contribua para manter servidores e APIs de pé!</p>
+        </div>
+
+        <div class="donate-container">
+            <div class="donate-card glass-panel">
+                <div class="donate-icon"><i class="fa-solid fa-qrcode"></i></div>
+                <h3>Contribuição Instantânea via Pix</h3>
+                <p>Apoie com qualquer valor instantaneamente usando a nossa chave Pix de forma rápida e segura no Brasil.</p>
+                <div class="pix-key-box">
+                    <input type="text" id="pix-key" value="suporte@aureatools.net" readonly>
+                    <button class="btn-copy-pix" onclick="copyPixKey()" title="Copiar Chave Pix">
+                        <i id="pix-icon" class="fa-regular fa-copy"></i> Copiar
+                    </button>
+                </div>
+                <span class="pix-note"><i class="fa-solid fa-circle-info"></i> Identificador de doação voluntária para NOC AureaTools</span>
+            </div>
+
+            <div class="donate-card glass-panel">
+                <div class="donate-icon"><i class="fa-brands fa-ethereum"></i></div>
+                <h3>Criptomoedas (USDT / ETH / BTC)</h3>
+                <p>Prefere apoiar em ativos digitais descentralizados? Use os nossos endereços para transações globais.</p>
+                
+                <div class="crypto-list">
+                    <div class="crypto-item">
+                        <span class="crypto-name">USDT (ERC20/TRC20)</span>
+                        <div class="crypto-addr-box">
+                            <input type="text" id="usdt-addr" value="0x71C7656EC7ab88b098defB751B7401B5f6d8976F" readonly>
+                            <button onclick="copyCrypto('usdt-addr')" title="Copiar Endereço"><i class="fa-regular fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="crypto-item">
+                        <span class="crypto-name">Bitcoin (BTC)</span>
+                        <div class="crypto-addr-box">
+                            <input type="text" id="btc-addr" value="1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa" readonly>
+                            <button onclick="copyCrypto('btc-addr')" title="Copiar Endereço"><i class="fa-regular fa-copy"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 AureaTools. Licença Apache 2.0. Desenvolvido para engenheiros NOC de alta performance.</p>
+            <div class="footer-links">
+                <a href="https://github.com/js-victr/aurea-tools" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+                <a href="#install"><i class="fa-solid fa-download"></i> Downloads</a>
+                <a href="#donate"><i class="fa-solid fa-heart"></i> Doar</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Web App JS -->
+    <script src="app.js"></script>
+</body>
+</html>

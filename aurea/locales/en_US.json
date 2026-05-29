@@ -1,0 +1,442 @@
+{
+    "ui": {
+        "press_enter": "Press ENTER to return to menu...",
+        "default": "default",
+        "contribute": "Contribute to the project:",
+        "system": "System",
+        "search_result": "Search results for: \"{query}\"",
+        "no_results": "No tools found.",
+        "recent": "Recent",
+        "search_hint": "[/] Search tool",
+        "exit_hint": "[0] Exit",
+        "choose_option": "Choose an option (number or /search): ",
+        "choose_or_back": "Enter the number or ENTER to go back: ",
+        "invalid_option": "Invalid option '{option}'. Try /search or a number 1-{max}.",
+        "exiting": "Closing Aurea. Thank you!",
+        "premium_badge": "PRO",
+        "tier_locked": "This feature requires Aurea Premium.",
+        "enter_ip": "Enter the IP or Domain",
+        "enter_ipv6": "Enter the IPv6 or Domain",
+        "enter_domain": "Enter the domain",
+        "enter_port": "Enter the port (e.g.: 80, 443, 8080)",
+        "enter_mac": "Enter the MAC (e.g.: 00:1A:2B... or 00-1A-2B...)",
+        "enter_cidr": "Enter the Network/IP with CIDR",
+        "enter_url": "Enter the URL or Domain",
+        "enter_prefix": "BGP Prefix (e.g.: 138.122.152.0/22)",
+        "enter_asn": "Origin ASN (e.g.: 264321)",
+        "packet_count": "Number of packets",
+        "password_length": "Password length (recommended 16)",
+        "test_domain": "Domain for test",
+        "cancelled": "Operation cancelled. No input provided.",
+        "ctrl_c_stop": "Press Ctrl+C to stop.",
+        "choose_category": "Choose a Category (number, shortcut or /search): ",
+        "choose_submenu": "Choose a Tool (number or [B] Back): ",
+        "back_hint": "[B] Back to Main Menu",
+        "donate_hint": "[D] Support the Project (Donations)",
+        "donation": {
+            "title": "SUPPORT AUREATOOLS DEVELOPMENT",
+            "desc1": "AureaTools is 100% free, open-source and libre. It empowers",
+            "desc2": "network engineers and NOC professionals around the globe.",
+            "how_to": "»» How to support the project:",
+            "linktree": "🔗 Donation Hub (Linktree):",
+            "pix": "🔑 Pix Key (Brazil):",
+            "github": "⭐ GitHub Sponsors:"
+        }
+    },
+    "tools": {
+        "cat": {
+            "diagnostics": "DIAGNOSTICS & CONNECTIVITY",
+            "services": "IP SERVICES & WEB SECURITY",
+            "bgp": "BGP ENGINEERING & ROUTING",
+            "automation": "NOC UTILITIES & AUTOMATION"
+        },
+        "info_local_network": {
+            "name": "Local IP & Interfaces",
+            "title": "IP ADDRESSING INFORMATION (IPv4 / IPv6)",
+            "mapping": "MAPPING ROUTING INTERFACES...",
+            "ipv4_out": "IPv4 Outbound (Gateway)",
+            "ipv6_out": "IPv6 Outbound (SLAAC)",
+            "no_ipv4": "No native route.",
+            "no_ipv6": "Disabled or no route.",
+            "border": "BORDER QUERY (NAT / PUBLIC IP):",
+            "pub_ip": "Public External IP",
+            "pub_fail": "Resolution failed.",
+            "telemetry": "OS TELEMETRY:",
+            "mobile": "Mobile Environment: Termux / Android OS Detected.",
+            "wifi_radio": "Wi-Fi Radio",
+            "termux_hint": "! Notice: Install the 'Termux:API' app and run 'pkg install termux-api' to read the Wi-Fi card.",
+            "platform": "Host Platform"
+        },
+        "lan_scan": {
+            "name": "LAN Device Scanner",
+            "title": "LOCAL NETWORK DEVICE SCANNER",
+            "searching": "SEARCHING FOR DEVICES ON LOCAL NETWORK (ARP)...",
+            "ip_col": "IP Address",
+            "mac_col": "MAC Address",
+            "error": "Error fetching devices from system ARP cache.",
+            "empty": "No adjacent devices detected (empty cache)."
+        },
+        "ping_ipv4": {
+            "name": "IPv4 Ping",
+            "title": "CONNECTIVITY TEST — IPv4 ONLY",
+            "firing": "Firing {count} IPv4 packets at {target}..."
+        },
+        "ping_ipv6": {
+            "name": "IPv6 Ping",
+            "title": "CONNECTIVITY TEST — IPv6 ONLY",
+            "firing": "Firing {count} IPv6 packets at {target}..."
+        },
+        "traceroute": {
+            "name": "Network Traceroute",
+            "title": "ROUTE MAPPING (TRACEROUTE)",
+            "mapping": "Mapping route to {target} (Please wait)...",
+            "not_found": "traceroute command not found.",
+            "termux_hint": "Run the following command to install:",
+            "icmp_hint": "TIP: Routers responding with * may be blocking ICMP or filtering traffic."
+        },
+        "port_check": {
+            "name": "TCP Port Checker",
+            "title": "TCP PORT TEST",
+            "testing": "Testing TCP connection on {host}:{port}...",
+            "open": "PORT {port} IS OPEN AND RESPONDING.",
+            "closed": "PORT {port} CLOSED OR FILTERED.",
+            "error": "Error testing port: {error}"
+        },
+        "speedtest": {
+            "name": "Bandwidth Speedtest",
+            "title": "BANDWIDTH TEST (SPEEDTEST)",
+            "not_installed": "Module not installed. Run: pip install speedtest-cli",
+            "finding_server": "Finding best server... please wait.",
+            "testing_dl": "Testing Download...",
+            "testing_ul": "Testing Upload...",
+            "result": "DOWNLOAD: {dl:.2f} Mbps | UPLOAD: {up:.2f} Mbps | PING: {ping} ms",
+            "fail": "Test failed: {error}"
+        },
+        "asn_lookup": {
+            "name": "Public IP & ASN Lookup",
+            "title": "PUBLIC OUTPUT & ASN LOOKUP (API IP-API)",
+            "searching": "Fetching current network output data...",
+            "pub_ip": "Public IP:",
+            "isp": "Carrier:",
+            "asn": "ASN:",
+            "location": "Location:",
+            "fail": "API returned failure: {msg}",
+            "error": "Communication failed: {error}"
+        },
+        "mtu_test": {
+            "name": "MTU & Fragmentation Test",
+            "title": "FRAGMENTATION & MTU TEST (PATH MTU DISCOVERY)",
+            "sending": "Sending packets (DF) to {target}...",
+            "success": "SUCCESS: Payload {size}B passed (Route MTU: {mtu})",
+            "fragmented": "FRAGMENTED: Payload {size}B blocked."
+        },
+        "http_check": {
+            "name": "HTTP Captive Portal Check",
+            "title": "HTTP NAVIGATION TEST",
+            "testing": "Making request to {url}...",
+            "redirect": "REDIRECT DETECTED! Diverted to: {url}",
+            "success": "FREE NAVIGATION: Page loaded correctly.",
+            "unexpected": "CONNECTION ESTABLISHED, BUT UNEXPECTED CONTENT.",
+            "fail": "Failed to navigate (HTTP): {error}"
+        },
+        "wifi_monitor": {
+            "name": "Live Wi-Fi RSSI Monitor",
+            "title": "REAL-TIME WI-FI SIGNAL MONITOR (WALK-TEST)",
+            "running": "RUNNING WI-FI SIGNAL MONITOR...",
+            "header": "AUREA ADVANCED WI-FI MONITOR  (Ctrl+C to exit)",
+            "bssid": "Active BSSID (Node MAC):",
+            "freq": "Frequency / Band:",
+            "signal": "Signal Level (RSSI):",
+            "excellent": "Excellent",
+            "moderate": "Moderate",
+            "critical": "Critical",
+            "disconnected": "Disconnected / Waiting for Signal",
+            "stopped": "Monitoring stopped."
+        },
+        "cdn_benchmark": {
+            "name": "CDN & App Latency Test",
+            "title": "LATENCY BENCHMARK (CDNs)",
+            "service": "Service",
+            "status": "Status",
+            "latency": "Latency",
+            "online": "ONLINE",
+            "fail": "FAIL",
+            "no_response": "No Response"
+        },
+        "dns_benchmark": {
+            "name": "Local DNS Benchmark",
+            "title": "LOCAL DNS BENCHMARK",
+            "desc": "Measures the real resolution time on global servers and your network gateway.",
+            "server": "DNS Server",
+            "time": "Resolution Time",
+            "gateway_label": "Current DNS (Gateway)",
+            "timeout": "Timeout / No Response",
+            "tip": "TIP: The Local Gateway should ideally respond faster than global servers."
+        },
+        "dnssec": {
+            "name": "DNSSEC Validation",
+            "title": "DNSSEC CHECKUP & VALIDATION",
+            "test_local": "1. Testing local server DNSSEC validation...",
+            "no_internet": "ERROR: Device is not connecting to the internet.",
+            "no_validate": "ALERT: Current DNS does NOT validate DNSSEC! (Accepted corrupted)",
+            "validates": "SECURE: Current DNS VALIDATES DNSSEC correctly!",
+            "comm_fail": "WARNING: Communication failure with secure test domain.",
+            "test_external": "2. External DNSSEC Query (Google DNS)...",
+            "has_ds": "Domain {domain} has security records (DS)!",
+            "authenticated": "Authenticated: Chain validated.",
+            "no_dnssec": "Domain does NOT have DNSSEC encryption active.",
+            "api_fail": "Failed to query API: {error}"
+        },
+        "traffic_monitor": {
+            "name": "Traffic Flow & ASN Monitor",
+            "title": "REAL-TIME TRAFFIC ANALYSIS (FLOW & ASN MONITOR)",
+            "running": "RUNNING TRAFFIC ANALYSIS...",
+            "mapping": "Mapping data flow... (Press Ctrl+C to stop)",
+            "header_active": "AUREA NET ACTIVE | Recording to: {file} | (Ctrl+C to stop)",
+            "mobile_warning": "[!] MOBILE MODE: Due to Android security (no root), only this terminal's traffic will be visible.",
+            "stopped": "Capture stopped by user.",
+            "total": "Total of {count} connections documented and saved.",
+            "file_saved": "File generated: {file}",
+            "iproute_error": "Error: iproute2 package not found."
+        },
+        "ipam": {
+            "name": "IPAM & Subnet Calculator",
+            "title": "ADVANCED IPAM & SUBNETTING CALCULATOR",
+            "input_hint": "Enter the IP with CIDR mask (e.g.: 192.168.10.0/24)",
+            "analysis": "ROUTING ANALYSIS: {network}",
+            "note_ip": "NOTE: The IP entered ({ip}) belongs to network {network}",
+            "version": "IP Version:",
+            "network": "Network:",
+            "mask": "Mask:",
+            "binary": "Binary Mask:",
+            "wildcard": "Wildcard:",
+            "broadcast": "Broadcast:",
+            "total_hosts": "Total Hosts:",
+            "usable_range": "Usable Range:",
+            "subnet_suggest": "SUBNETTING SUGGESTION:",
+            "dividing": "Dividing into /{prefix}: {count} networks created.",
+            "example": "Example of the first 2:",
+            "subnet_tip": "Tip: Use /{prefix} to segment departments.",
+            "too_small": "Network too small to subdivide without losing addresses.",
+            "block_type": "Block Type:",
+            "private": "Private (LAN)",
+            "public": "Public (Internet)",
+            "ptr": "Ptr Record:",
+            "invalid": "Invalid input: {error}"
+        },
+        "banner_grab": {
+            "name": "Banner Grabbing",
+            "title": "BANNER GRABBING & FINGERPRINTING",
+            "desc": "Identifies the daemon/server version running behind an open TCP port.",
+            "scanning": "Starting scan on {host}:{port}...",
+            "closed": "Port closed or filtered by Firewall.",
+            "connected": "Connection established. Collecting banner...",
+            "captured": "--- CAPTURED BANNER ---",
+            "no_banner": "Service did not return a readable banner.",
+            "fail": "Failed to inspect service: {error}"
+        },
+        "spoofing_audit": {
+            "name": "DNS Spoofing Auditor",
+            "title": "SPOOFING & PHISHING AUDITOR (DNS GUARD)",
+            "desc": "Mapping domain armor against fake email sending...",
+            "querying": "Querying security records in DNS zone...",
+            "spf_found": "SPF FOUND:",
+            "spf_hard": "STRONG (Hardfail) — Unauthorized emails are rejected.",
+            "spf_soft": "MODERATE (Softfail) — Fake emails go to Spam.",
+            "spf_neutral": "CRITICAL (Neutral/Permissive) — Domain unprotected!",
+            "spf_missing": "SPF MISSING: Anyone can forge emails from this domain!",
+            "spf_fail": "Failed to check SPF: {error}",
+            "dmarc_found": "DMARC FOUND:",
+            "dmarc_reject": "STRONG — Forgeries are summarily blocked.",
+            "dmarc_quarantine": "MODERATE — Forgeries go to quarantine/spam.",
+            "dmarc_none": "ALERT — Monitor mode only. Spoofing still possible.",
+            "dmarc_missing": "DMARC MISSING: No compliance guidelines configured.",
+            "dmarc_fail": "Failed to check DMARC: {error}",
+            "dkim_note": "* Note: DKIM is not tested here as it requires the server's specific selector."
+        },
+        "ip_intel": {
+            "name": "IP Intelligence & Recon",
+            "title": "IP INTELLIGENCE & ASN LOOKUP",
+            "desc": "Gets geolocation, carrier and BGP routing (ASN) data for any IP.",
+            "private_warning": "Address {ip} is for local/private use and has no public record.",
+            "querying": "Querying global routing database...",
+            "dossier": "IP ADDRESS DOSSIER: {ip}",
+            "isp": "Carrier / ISP:",
+            "org": "Organization:",
+            "asn": "ASN (BGP):",
+            "location": "Location:",
+            "fail": "Query rejected by API: {msg}",
+            "error": "Failed to query IP: {error}"
+        },
+        "bgp_audit": {
+            "name": "BGP Route Auditor",
+            "title": "PROFESSIONAL BGP AUDITOR"
+        },
+        "sec_headers": {
+            "name": "HTTP Security Headers Scan",
+            "title": "SECURITY HEADERS SCANNER (HTTP SEC)",
+            "desc": "Analyzes a web server's armor against attacks like XSS and Clickjacking.",
+            "analyzing": "Analyzing security policies of {url}...",
+            "report": "WEB ARMOR REPORT (SECURITY HEADERS)",
+            "server_exposed": "Server Exposed: {server}  (May facilitate targeted attacks)",
+            "server_hidden": "Server Hidden: Daemon identity is protected.",
+            "score": "Security Score: {score}/{total}",
+            "excellent": "Status: EXCELLENT. Server adopts best Web Defense practices.",
+            "regular": "Status: REGULAR. Some important policies are missing.",
+            "critical": "Status: CRITICAL. Site is exposed to primary attack vectors.",
+            "vulnerable": "Vulnerable",
+            "missing": "Missing protection: {desc}",
+            "fail": "Failed to connect to web server: {error}"
+        },
+        "rpki": {
+            "name": "BGP RPKI Validator",
+            "title": "RPKI VALIDATOR (BGP)"
+        },
+        "osint_sub": {
+            "name": "OSINT Subdomain Recon",
+            "title": "OSINT SUBDOMAINS"
+        },
+        "mac_oui": {
+            "name": "MAC OUI Vendor Lookup",
+            "title": "MAC & OUI ANALYZER",
+            "desc": "Identifies the device manufacturer from the MAC Address.",
+            "querying": "Querying IEEE (OUI) database...",
+            "found": "Manufacturer identified:",
+            "not_found": "Manufacturer not found (invalid MAC or private OUI).",
+            "fail": "Connection failed: {error}"
+        },
+        "whois": {
+            "name": "Native WHOIS Client",
+            "title": "NATIVE WHOIS CLIENT (PORT 43)",
+            "desc": "Queries the public registry of a domain directly on port 43.",
+            "connecting": "Connecting to WHOIS database ({server})...",
+            "data": "REGISTRY DATA",
+            "fail": "WHOIS error: {error}  (Server may not support direct mapping)"
+        },
+        "password_gen": {
+            "name": "Secure Password Generator",
+            "title": "SECURE PASSWORD GENERATOR",
+            "desc": "Generates ultra-high entropy passwords for equipment and clients.",
+            "generated": "PASSWORDS GENERATED LOCALLY (Not saved)",
+            "option": "Option {n}:",
+            "tip": "TIP: Use the mouse to select and copy. None of them are stored on disk."
+        },
+        "port_scanner": {
+            "name": "Multithreaded Port Scanner",
+            "title": "PORT SCANNER (THREADED)",
+            "desc": "Scans TCP ports in parallel using a thread pool.",
+            "scanning": "Scanning {host} on ports {ports}...",
+            "open": "Port {port} ({service}) is OPEN."
+        },
+        "ssl_inspector": {
+            "name": "SSL/TLS Certificate Inspector",
+            "title": "SSL/TLS CERTIFICATE DETAILS",
+            "desc": "Analyzes validity, issuer, and signature of SSL certificates.",
+            "subject": "Subject (CN):",
+            "issuer": "Issuer:",
+            "valid_from": "Valid From:",
+            "valid_to": "Valid Until:",
+            "days_left": "Days Left:",
+            "expired": "EXPIRED!",
+            "warning": "WARNING: Expires in less than 30 days!"
+        },
+        "mtr": {
+            "name": "Advanced MTR",
+            "title": "MY TRACEROUTE (MTR)",
+            "desc": "Continuous traceroute with hop latency and packet loss statistics.",
+            "header": "Hop | IP Address | Loss% | Min | Avg | Max | Jitter",
+            "stopped": "MTR stopped by user."
+        },
+        "peeringdb": {
+            "name": "PeeringDB Lookup",
+            "title": "PEERINGDB NETWORK SEARCH",
+            "desc": "Queries public PeeringDB for network IXP and facility presence.",
+            "not_found": "Network AS{asn} not found in PeeringDB.",
+            "policy": "Peering Policy:",
+            "ixps": "IXP Presence:",
+            "facs": "Facility Presence:"
+        },
+        "looking_glass": {
+            "name": "BGP Looking Glass",
+            "title": "BGP LOOKING GLASS (RIPE RIS)",
+            "desc": "Inspects route visibility, path, and communities from public RIPE RIS servers.",
+            "visibility": "Visibility of {target} across collectors:",
+            "peer_count": "RIS Peers reporting:"
+        },
+        "community_decoder": {
+            "name": "BGP Community Decoder",
+            "title": "BGP COMMUNITY TRANSLATOR",
+            "desc": "Decodes standard/large BGP communities into human-readable details.",
+            "decoded": "Decoded community {community}:"
+        },
+        "dns_prop": {
+            "name": "DNS Propagation Checker",
+            "title": "DNS PROPAGATION CHECKER",
+            "desc": "Checks a domain DNS records across global resolvers in parallel.",
+            "result": "Server: {server:<20} | Type: {type:<5} | Result: {result}"
+        },
+        "sla_calc": {
+            "name": "SLA & Uptime Calculator",
+            "title": "SLA & DOWNTIME CALCULATOR",
+            "desc": "Calculates allowable downtime based on contract SLA percentage.",
+            "allowed": "Allowed downtime for {sla}% SLA:",
+            "daily": "  - Daily:   {time}",
+            "monthly": "  - Monthly: {time}",
+            "yearly": "  - Yearly:  {time}"
+        },
+        "lan_discovery": {
+            "name": "LAN Auto-Discovery & NetBox Sync",
+            "title": "LAN AUTO-DISCOVERY & NETBOX SYNC",
+            "desc": "Concurrent ping sweep, MAC/OUI mapping, and NetBox IPAM sync."
+        },
+        "mikrotik_ssh": {
+            "name": "MikroTik SSH Auditor & NetBox Sync",
+            "title": "MIKROTIK SSH AUDITOR & NETBOX IPAM",
+            "desc": "Accesses routers via native SSH, maps IPs/interfaces/VLANs/neighbors and syncs with NetBox."
+        },
+        "bgp_agg": {
+            "name": "BGP CIDR Route Aggregator",
+            "title": "BGP CIDR ROUTE AGGREGATOR & OPTIMIZER",
+            "desc": "Mathematically collapses overlapping or adjacent IP blocks to optimize BGP routing table."
+        },
+        "multi_ping": {
+            "name": "Multi-Target Connectivity Tester",
+            "title": "MULTI-TARGET PING TESTER",
+            "desc": "Pings multiple hosts in parallel and displays comparative latency and loss statistics."
+        },
+        "config_diff": {
+            "name": "Config Diff Comparator",
+            "title": "CONFIG FILE COMPARATOR (DIFF)",
+            "desc": "Compares two configuration files side-by-side with color highlights."
+        },
+        "dns_deep_inspector": {
+            "name": "DNS Record Deep Inspector",
+            "title": "DNS RECORD DEEP INSPECTOR",
+            "desc": "Deep queries DNS zones (A, AAAA, MX, TXT, CNAME, NS, SOA, SPF, DMARC, DNSSEC)."
+        },
+        "device_auditor": {
+            "name": "Multi-Vendor Device Auditor & NetBox Sync",
+            "title": "MULTI-VENDOR DEVICE AUDITOR & NETBOX IPAM",
+            "desc": "Connects via SSH/Telnet to MikroTik, Huawei, Cisco, and Juniper, mapping topology and syncing with NetBox."
+        },
+        "dns_hijack": {
+            "name": "DNS Hijacking Detector",
+            "title": "DNS HIJACKING & REDIRECT DETECTOR",
+            "desc": "Tests if local DNS queries are intercepted or modified by malicious or rogue resolvers."
+        },
+        "cgnat_sim": {
+            "name": "CGNAT Port Exhaustion Simulator",
+            "title": "CGNAT PORT EXHAUSTION SIMULATOR",
+            "desc": "Simulates rapid concurrent socket traffic to test port limits and network NAT behavior."
+        },
+        "nmap_scan": {
+            "name": "NMAP TCP Port Scanner"
+        },
+        "isp_latency": {
+            "name": "Dynamic ISP Latency Matrix"
+        },
+        "subnet_planner": {
+            "name": "Subnet Overlay IPAM Planner"
+        }
+    }
+}
