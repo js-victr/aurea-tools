@@ -128,15 +128,19 @@ def show_banner():
     print(cyan(r"  ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝"))
     
     width = max(platform_info.terminal_width(), 40)
-    top_line = "═" * min(width - 4, 76)
+    top_len = min(width - 4, 76)
+    top_line = "═" * top_len
     
     print(cyan(f" ╔{top_line}╗"))
     title_line = f" A U R E A   T O O L S   —   v{__version__}  (Carrier-Grade NOC System)"
-    print(f" {cyan('║')} {yellow(f'{title_line:<{min(width - 4, 76) - 1}}')} {cyan('║')}")
-    print(f" {cyan('║')} {dim(f'Contribute: https://github.com/js-victr/aurea-tools'):<{min(width - 4, 76) - 1}} {cyan('║')}")
+    print(f" {cyan('║')} {yellow(f'{title_line:<{top_len - 2}}')} {cyan('║')}")
+    
+    contrib_line = "Contribute: https://github.com/js-victr/aurea-tools"
+    print(f" {cyan('║')} {dim(f'{contrib_line:<{top_len - 2}}')} {cyan('║')}")
     
     sys_info = f"{platform.system()} {platform.release()} | Python {platform.python_version()}"
-    print(f" {cyan('║')} {dim(t('ui.system') + ': ' + sys_info):<{min(width - 4, 76) - 1}} {cyan('║')}")
+    sys_line = f"{t('ui.system')}: {sys_info}"
+    print(f" {cyan('║')} {dim(f'{sys_line:<{top_len - 2}}')} {cyan('║')}")
     print(cyan(f" ╚{top_line}╝"))
 
 
