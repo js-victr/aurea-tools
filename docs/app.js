@@ -8,248 +8,248 @@ const TOOLS_DATA = [
         num: "1",
         name: "Advanced MTR with Loss & Jitter",
         category: "diagnostics",
-        desc: "Traçado de rotas contínuo com estatísticas de perda de pacotes e jitter (variação de latência) em tempo real.",
-        use: "Insira o IP/host de destino. O MTR enviará pacotes consecutivamente. Pressione Ctrl+C para encerrar.",
+        desc: "Continuous path routing with real-time packet loss, average latency, and jitter tracking.",
+        use: "Enter the target IP or hostname. The tool continuously sends packets. Press Ctrl+C to stop.",
         kws: ["mtr", "traceroute", "ping", "latency", "loss", "jitter", "noc"]
     },
     {
         num: "2",
         name: "Path MTU Discovery (DF Ping)",
         category: "diagnostics",
-        desc: "Busca binária automatizada para descobrir o MTU (Maximum Transmission Unit) exato sem fragmentação no enlace físico.",
-        use: "Insira o host de destino. A ferramenta executará ping com bit Don't Fragment (DF) ativo de 1200 a 1500 bytes.",
+        desc: "Find the exact maximum transmission unit (MTU) size without causing fragmentation on your link.",
+        use: "Enter the target. The tool pings with the Don't Fragment (DF) bit set, testing from 1200 to 1500 bytes.",
         kws: ["mtu", "ping", "fragmentation", "df", "mss", "overhead"]
     },
     {
         num: "3",
         name: "Aurea Nmap TCP Port Scanner & Banner Grabbing",
         category: "diagnostics",
-        desc: "Scanner de portas TCP de alta velocidade (modelo NMAP) para identificar portas abertas e mapear serviços/banners em tempo real.",
-        use: "Digite o IP/host de destino. O sistema varrerá automaticamente as 1000 portas mais comuns de redes e tentará obter as versões dos serviços rodando.",
+        desc: "Fast TCP port scanner that identifies open ports and attempts to capture service banners.",
+        use: "Enter the target host. The tool scans the 1000 most common ports and prints open sockets.",
         kws: ["scan", "port", "nmap", "banner", "service", "version", "grab"]
     },
     {
         num: "4",
         name: "Dynamic ISP Latency Matrix",
         category: "diagnostics",
-        desc: "Matriz dinâmica de latência e qualidade de rota para principais nuvens globais (AWS, GCP, Azure, Oracle) e CDNs (Cloudflare, Akamai, Fastly).",
-        use: "Inicie a ferramenta para medir em tempo real o RTT e a perda de pacotes para os backbones globais de nuvem e borda de rede.",
+        desc: "Tests latency to major cloud providers (AWS, GCP, Azure, Oracle) and CDN edge networks (Cloudflare, Fastly).",
+        use: "Start the tool to see live round-trip time (RTT) measurements to global cloud infrastructure.",
         kws: ["latency", "isp", "rtt", "cloud", "aws", "gcp", "azure", "cdn", "cloudflare"]
     },
     {
         num: "5",
         name: "Subnet Overlay Planner (Conflict Detector)",
         category: "diagnostics",
-        desc: "Planejador de sub-redes e detector de conflito overlay para faixas IPv4/IPv6 em túneis, VPNs ou peers de rede.",
-        use: "Insira suas sub-redes existentes e a sub-rede proposta. O sistema auditará colisões/sobreposições e sugerirá faixas livres.",
+        desc: "Plan subnets and detect overlay conflicts across IPv4/IPv6 ranges in VPNs, tunnels, or peers.",
+        use: "Enter your active subnets and the proposed range. The tool detects overlapping IPs and highlights free blocks.",
         kws: ["subnet", "cidr", "ipam", "overlay", "vpn", "conflict", "ipv4", "ipv6"]
     },
     {
         num: "6",
         name: "Public IP & ASN Lookup",
         category: "services",
-        desc: "Mapeia o seu IP público atual, Provedor de Internet (ISP), ASN de trânsito e localização geográfica aproximada.",
-        use: "Selecione a ferramenta e o sistema consultará de forma segura o dossiê da sua conexão atual via HTTPS.",
+        desc: "Identify your current public IP, internet service provider (ISP), transit ASN, and estimated location.",
+        use: "Launch the tool to retrieve a clean summary of your current connection metadata.",
         kws: ["ip", "public", "asn", "geolocation", "isp", "myip"]
     },
     {
         num: "7",
         name: "IP Intelligence & Recon",
         category: "services",
-        desc: "Consulta de inteligência (OSINT) e geolocalização detalhada para qualquer IP público de trânsito global.",
-        use: "Insira o endereço IP de destino ou nome de host público e aguarde o retorno das coordenadas e operadora.",
+        desc: "Lookup geolocation, reverse DNS, hosting carrier, and WHOIS records for any public IP address.",
+        use: "Provide any target IP or public domain name to fetch its routing and carrier profile.",
         kws: ["ip", "intel", "recon", "geolocation", "asn", "carrier", "whois"]
     },
     {
         num: "8",
         name: "DNS Hijacking Detector",
         category: "services",
-        desc: "Detector de interceptações e sequestros de DNS locais usando validação trilateral (3-way) contra Cloudflare e Quad9 DoH.",
-        use: "Selecione a ferramenta. Ela simulará falhas de NXDOMAIN e divergências de DoH para auditar se há proxy/interceptação.",
+        desc: "Checks for local DNS interception or spoofing by comparing queries against secure DoH resolvers.",
+        use: "Select the tool. It verifies NXDOMAIN replies and looks for differences with public secure endpoints.",
         kws: ["dns", "hijack", "security", "spoofing", "doh", "nxdomain", "poisoning"]
     },
     {
         num: "9",
         name: "CGNAT Port Exhaustion Simulator",
         category: "services",
-        desc: "Simulador NOC de rajada paralela de sockets para auditar limites de conexões simultâneas e esgotamento de CGNAT.",
-        use: "Insira o host e o número de sockets paralelos (ex: 150). O sistema calculará a latência média e a taxa de perda/timeout.",
+        desc: "Simulate concurrent socket burst requests to check session capacity limits and CGNAT timeouts.",
+        use: "Enter target host and number of concurrent connections (e.g., 150) to measure latencies and connection drops.",
         kws: ["cgnat", "exhaustion", "nat", "ports", "sockets", "concurrency", "timeouts"]
     },
     {
         num: "10",
         name: "Local DNS Benchmark",
         category: "services",
-        desc: "Benchmark de latência e resolução DNS local comparando o seu roteador com Google, Cloudflare, Quad9 e OpenDNS.",
-        use: "Digite o domínio de teste (ex: google.com) e observe o tempo exato de resposta UDP de cada servidor DNS em milissegundos.",
+        desc: "Benchmark DNS query speeds by comparing your current resolver against Google, Cloudflare, Quad9, and OpenDNS.",
+        use: "Enter a test domain (e.g., google.com) to view the response times in milliseconds.",
         kws: ["dns", "benchmark", "resolver", "latency", "resolving", "local"]
     },
     {
         num: "11",
         name: "DNS Propagation Checker",
         category: "services",
-        desc: "Audita o tempo de propagação global e resolução de registros 'A' de um domínio em servidores DNS mundiais em paralelo.",
-        use: "Insira o nome de domínio e veja em tempo real as respostas convergentes ou divergentes nos servidores mundiais.",
+        desc: "Query DNS 'A' records across multiple global public resolvers in parallel to verify propagation.",
+        use: "Type the domain name and watch responses from global servers update in real-time.",
         kws: ["dns", "propagation", "checker", "parallel", "resolvers", "dig"]
     },
     {
         num: "12",
         name: "DNSSEC Validation",
         category: "services",
-        desc: "Verificador de assinaturas criptográficas DNSSEC ativas e autenticação segura AD (Authenticated Data) de domínios.",
-        use: "Insira o domínio para auditar e veja se ele possui registros DS publicados e suporte a chaves criptográficas DNSKEY.",
+        desc: "Verify DNSSEC cryptographic records (DS, DNSKEY) and check if your local resolver validates them.",
+        use: "Enter a domain to audit its secure DNS delegation and cryptographic signatures.",
         kws: ["dnssec", "dns", "security", "validation", "cryptography"]
     },
     {
         num: "13",
         name: "SSL/TLS Cryptographic Chain Auditor",
         category: "services",
-        desc: "Scanner e inspetor estrito de certificados SSL/TLS para verificar validade, entidade emissora (CA) e dias para expiração.",
-        use: "Insira o domínio na porta 443 e aguarde o download e parse do certificado X.509 transmitido na sessão.",
+        desc: "Audit SSL/TLS certificates. Displays validity dates, issuer information, protocol support (TLS 1.0-1.3), and weak ciphers.",
+        use: "Provide a domain to query port 443 and download its X.509 certificate metadata.",
         kws: ["ssl", "tls", "certificate", "inspector", "ciphers", "tls13", "validation", "pci-dss"]
     },
     {
         num: "14",
         name: "HTTP Security Headers Scan",
         category: "services",
-        desc: "Scaneia cabeçalhos de segurança HTTP (HSTS, CSP, X-Frame-Options, X-Content-Type) de servidores web.",
-        use: "Insira a URL completa (ex: https://registro.br) e o sistema avaliará os níveis de proteção contra injeções de script.",
+        desc: "Scan HTTP security response headers like HSTS, CSP, X-Frame-Options, and X-Content-Type-Options.",
+        use: "Provide a full URL (e.g., https://cloudflare.com) to audit security configurations.",
         kws: ["http", "security", "headers", "scan", "armor", "clickjacking", "hsts", "csp"]
     },
     {
         num: "15",
         name: "Banner Grabbing",
         category: "services",
-        desc: "Conecta em soquetes de serviços comuns para capturar banners e assinaturas de versão (SSH, FTP, SMTP, HTTP, etc.).",
-        use: "Insira o IP/host de destino e a porta de rede. O sistema exibirá o payload bruto retornado pelo daemon.",
+        desc: "Connect to custom ports (SSH, FTP, SMTP, HTTP) and display the raw service banner returned by the server.",
+        use: "Provide target IP or hostname along with a port. The tool prints the server's reply.",
         kws: ["banner", "grabbing", "fingerprint", "service", "version", "osint"]
     },
     {
         num: "16",
         name: "Email Security Audit (SPF & DMARC)",
         category: "services",
-        desc: "Auditoria de registros de segurança DNS SPF e DMARC contra spoofing de e-mail e campanhas de phishing.",
-        use: "Insira o domínio corporativo e veja se ele possui políticas duras (reject, softfail) ou permissivas.",
+        desc: "Inspect active SPF and DMARC DNS records to verify email domain spoofing defenses.",
+        use: "Enter a domain to view its published TXT records and check if it enforces strict policies (reject/quarantine).",
         kws: ["spf", "dmarc", "email", "security", "spoofing", "phishing", "txt"]
     },
     {
         num: "17",
         name: "DNS Zone Recon & OSINT",
         category: "services",
-        desc: "Inspetor aprofundado de zona DNS que extrai todos os registros essenciais (A, AAAA, MX, TXT, NS, SOA, DS) de uma vez.",
-        use: "Insira o domínio. A ferramenta consultará a API DoH de forma abrangente e estruturará os registros.",
+        desc: "Perform comprehensive DNS lookups to extract all core records (A, AAAA, MX, TXT, NS, SOA, DS) at once.",
+        use: "Enter the domain name. The tool queries secure endpoints and returns a structured list.",
         kws: ["dns", "zone", "recon", "ns", "mx", "txt", "doh", "osint"]
     },
     {
         num: "18",
-        name: "BGP Looking Glass Consolidado",
+        name: "Consolidated BGP Looking Glass",
         category: "bgp",
-        desc: "Consultor global Looking Glass que consolida caminhos de trânsito AS-Path (RIPE RIS) e validação RPKI para qualquer IP/bloco.",
-        use: "Insira o IP ou prefixo CIDR. Veja os caminhos de anúncios globais e a integridade ROA de trânsito de rede.",
+        desc: "Query real-time BGP routing paths (RIPE RIS), RPKI validation status, and Tier-1 tags for any IP or prefix.",
+        use: "Enter an IP address or CIDR prefix. See active global routing paths and RPKI status.",
         kws: ["bgp", "looking", "glass", "ripe", "ris", "route", "asn", "rpki", "propagation"]
     },
     {
         num: "19",
         name: "BGP RPKI Validator",
         category: "bgp",
-        desc: "Validador criptográfico estrito de anúncios BGP RPKI para verificar a legitimidade do ASN de origem de blocos CIDR.",
-        use: "Insira o prefixo e o ASN de origem correspondente. O sistema consultará as assinaturas digitais ROA do RIPE NCC.",
+        desc: "Verify cryptographic BGP RPKI signatures to validate if a specific origin ASN is authorized for a CIDR block.",
+        use: "Provide the IP prefix and origin ASN. The tool checks secure ROA registers at RIPE NCC.",
         kws: ["bgp", "rpki", "validation", "hijack", "roa", "security"]
     },
     {
         num: "20",
         name: "PeeringDB Lookup",
         category: "bgp",
-        desc: "Consulta detalhes de conexões de peering, servidores IXP públicos e presença em data centers de operadoras no PeeringDB.",
-        use: "Digite o número do ASN de trânsito (ex: 15169 para Google, 264321) e veja os pontos de troca de tráfego ativos.",
+        desc: "Query PeeringDB records to view an ASN's presence at internet exchanges (IXPs) and public data centers.",
+        use: "Enter the target ASN (e.g., 15169 for Google) to view active public peering points.",
         kws: ["peeringdb", "asn", "peering", "ixp", "datacenter", "policy"]
     },
     {
         num: "21",
         name: "Traffic Flow & ASN Monitor (AureaFlow)",
         category: "bgp",
-        desc: "Monitor em tempo real de fluxos de conexões TCP/UDP locais ou receptor daemon NOC de pacotes NetFlow v5 (porta 2055).",
-        use: "Escolha entre monitor de conexões locais (ss/netstat com ASN) ou coletor daemon NOC NetFlow v5 em tempo real.",
+        desc: "Monitor active local TCP/UDP connection sockets with live ASNs, or run a NetFlow v5 receiver daemon on port 2055.",
+        use: "Choose between local connection mapping or running a real-time NetFlow collector.",
         kws: ["traffic", "flow", "asn", "monitor", "connections", "netflow", "noc"]
     },
     {
         num: "22",
         name: "OSINT Subdomain Recon",
         category: "bgp",
-        desc: "Busca de subdomínios via DNS Certificate Transparency (CT) consultando crt.sh, Sonar Omnisint e HackerTarget.",
-        use: "Insira o domínio (ex: google.com) e veja a listagem de subdomínios indexados em certificados SSL.",
+        desc: "Discover subdomains using Certificate Transparency (CT) logs from crt.sh and other public datasets.",
+        use: "Provide the domain (e.g., github.com) to view a list of registered secure subdomains.",
         kws: ["osint", "subdomain", "recon", "dns", "dnssec", "crtsh", "sonar"]
     },
     {
         num: "23",
-        name: "Local Gateway discovery",
+        name: "Local Gateway Discovery",
         category: "automation",
-        desc: "Pesquisa automatizada por gateway padrão ativo e interfaces físicas locais.",
-        use: "Inicie a ferramenta para obter informações imediatas sobre tabela de rotas locais e IPs do enlace.",
+        desc: "Automatically detect the current active default gateway and local physical network interfaces.",
+        use: "Start the tool to view active local routing tables and interface configuration details.",
         kws: ["gateway", "local", "interfaces", "discovery", "arp", "route"]
     },
     {
         num: "24",
         name: "Local Devices Discovery (ARP)",
         category: "automation",
-        desc: "Escaneamento ARP passivo de alta velocidade para descobrir IPs, MACs e fabricantes de dispositivos na subrede local.",
-        use: "Inicie a ferramenta e veja a tabela ARP resolvida de forma síncrona contra base OUI de fabricantes offline.",
+        desc: "Scan the local subnet via fast ARP checks to discover active IPs, MAC addresses, and hardware vendors.",
+        use: "Launch the tool to resolve active local network devices against an offline OUI vendor database.",
         kws: ["arp", "discovery", "devices", "mac", "vendor", "lan"]
     },
     {
         num: "25",
         name: "SNMP Mass Collector",
         category: "automation",
-        desc: "Coleta massiva de informações via SNMPv2c (descrição do sistema, uptime, interfaces de roteador).",
-        use: "Digite o IP e a comunidade SNMP (default: public) para auditar portas físicas e descrições MIB nativas.",
+        desc: "Collect system details, system uptime, and interface profiles from network hardware using SNMPv2c.",
+        use: "Provide target IP and community string (e.g., public) to query physical port metadata.",
         kws: ["snmp", "mibs", "mass", "collector", "noc", "community"]
     },
     {
         num: "26",
         name: "SSH Command Runner",
         category: "automation",
-        desc: "Execução automatizada de comandos em múltiplos equipamentos via SSH concorrente usando Netmiko/Paramiko.",
-        use: "Insira a lista de hosts e comandos a disparar em lote para automações rápidas de NOC e segurança.",
+        desc: "Run a batch of commands concurrently on multiple network devices via SSH.",
+        use: "Provide a list of IPs and commands to execute them across hosts.",
         kws: ["ssh", "automation", "netmiko", "commands", "runner", "batch"]
     },
     {
         num: "27",
         name: "Multi-Vendor Auditor",
         category: "automation",
-        desc: "Auditor interativo de comandos multi-vendor com suporte de templates Netmiko para roteadores Cisco, Juniper, Huawei, Mikrotik.",
-        use: "Selecione a ferramenta e especifique as credenciais de auditoria SSH de roteadores principais.",
+        desc: "Interactive configuration checker with preconfigured templates for Cisco, Juniper, Huawei, and MikroTik routers.",
+        use: "Select the tool and enter SSH credentials to run device audits.",
         kws: ["cisco", "juniper", "huawei", "mikrotik", "audit", "netmiko", "noc"]
     },
     {
         num: "28",
         name: "MikroTik API Config Auditor",
         category: "automation",
-        desc: "Conecta na API nativa do RouterOS (MikroTik) para validar integridade de firewall, NAT e portas de serviços padrão abertas.",
-        use: "Insira IP e credenciais API da MikroTik (porta 8728) e aguarde o relatório estruturado de segurança do NOC.",
+        desc: "Connects to RouterOS API to verify firewall settings, NAT configurations, and default service ports.",
+        use: "Enter target IP and MikroTik API credentials (port 8728) to audit device security.",
         kws: ["mikrotik", "routeros", "api", "firewall", "audit", "security"]
     },
     {
         num: "29",
         name: "IP Address Plan (IPAM Generator)",
         category: "automation",
-        desc: "Gerador e planejador automatizado de sub-redes CIDR com calculadora de máscaras, hosts livres e prefixos.",
-        use: "Digite o bloco CIDR pai (ex: 192.168.0.0/24) e o tamanho das sub-redes filhas desejadas.",
+        desc: "Automatically divide a parent IP subnet into custom smaller CIDR blocks.",
+        use: "Enter the parent CIDR prefix (e.g., 192.168.0.0/24) and your target subnet size.",
         kws: ["ipam", "subnetting", "cidr", "planner", "addressing", "generator"]
     },
     {
         num: "30",
         name: "VLAN Planner",
         category: "automation",
-        desc: "Planejador de domínios de colisão VLAN com IDs numéricos (802.1Q), descrições de subnets e diagramas NOC.",
-        use: "Selecione a ferramenta para criar layouts hierárquicos e estruturados de tags de switches e roteadores.",
+        desc: "Document and organize VLAN tags, descriptions, and assignments.",
+        use: "Use the interactive prompts to define physical network segments and export structured layouts.",
         kws: ["vlan", "switching", "8021q", "planner", "ids", "tags"]
     },
     {
         num: "31",
         name: "Cisco Config Generator",
         category: "automation",
-        desc: "Gerador automatizado de arquivos de configuração base Cisco IOS (SSH, VTY, interfaces, roteamento, DHCP).",
-        use: "Responda às perguntas interativas sobre IPs e interfaces e obtenha o arquivo de configuração de borda limpo.",
+        desc: "Generate clean configuration blueprints for Cisco routers and switches (SSH, interfaces, routing, DHCP).",
+        use: "Answer interactive prompts to generate a standard bootstrap config file.",
         kws: ["cisco", "config", "generator", "ios", "template", "bootstrap"]
     }
 ];
@@ -262,23 +262,23 @@ const SIMULATION_STEPS = [
         cmd: "python -m aurea",
         delay: 1500,
         output: [
-            "<span class='cyan'>[BASTIDORES] Carregando subsistemas do Core, cores ANSI e verificando chaves de API...</span>",
+            "<span class='cyan'>[BACKGROUND] Loading core modules, ANSI colors, and checking API keys...</span>",
             "╔══════════════════════════════════════════════════════════════════════════════╗",
-            "║  <span class='green'>:: A U R E A ::</span>  |                 PAINEL DE FERRAMENTAS PRINCIPAL              ║",
+            "║  <span class='green'>:: A U R E A ::</span>  |                   MAIN INTERACTIVE CONSOLE                   ║",
             "╚══════════════════════════════════════════════════════════════════════════════╝",
-            "  Selecione a ferramenta desejada no menu..."
+            "  Select a tool from the menu to begin..."
         ]
     },
     {
         cmd: "bgp_looking_glass --target 8.8.8.8",
         delay: 2000,
         output: [
-            "<span class='yellow'>Minerando dados BGP globais via RIPE RIS e RPKI...</span> (Aguarde)",
-            "  <span class='green'>✓</span> Prefixo BGP:  <span class='green'>8.8.8.0/24</span>",
+            "<span class='yellow'>Fetching BGP data from RIPE RIS and checking RPKI...</span>",
+            "  <span class='green'>✓</span> Prefix:      <span class='green'>8.8.8.0/24</span>",
             "  <span class='green'>✓</span> Origin ASN:  <span class='yellow'>AS15169</span> (Google LLC)",
-            "  <span class='green'>✓</span> RPKI Status: <span class='green'>VALID (Assinado digitalmente)</span>",
+            "  <span class='green'>✓</span> RPKI Status: <span class='green'>VALID (Digitally Signed)</span>",
             "",
-            "<span class='cyan'>CAMINHOS DE PROPAGAÇÃO AS-PATH (GLOBAL SAMPLES):</span>",
+            "<span class='cyan'>BGP AS-PATH PROPAGATION PATHS:</span>",
             "  <span class='bold'>[RRC01]</span> via AS2914 | NextHop: 5.57.80.113",
             "    └─ Flow: <span class='cyan'>[AS2914 (NTT - Tier-1)]</span> <span class='bold'>➔</span> <span class='green'>[AS15169 (Google)]</span>"
         ]
@@ -287,32 +287,32 @@ const SIMULATION_STEPS = [
         cmd: "ssl_inspector --domain google.com",
         delay: 2000,
         output: [
-            "<span class='yellow'>Iniciando auditoria criptográfica profunda do canal SSL/TLS...</span>",
-            "  • TLSv1.2   | Status: <span class='green'>SUPORTADO</span>            | Seguro (Padrão)",
-            "  • TLSv1.3   | Status: <span class='green'>SUPORTADO</span>            | Recomendado (Ultra-Seguro)",
+            "<span class='yellow'>Auditing SSL/TLS certificate chain...</span>",
+            "  • TLSv1.2   | Status: <span class='green'>SUPPORTED</span>            | Secure",
+            "  • TLSv1.3   | Status: <span class='green'>SUPPORTED</span>            | Recommended",
             "",
-            "<span class='cyan'>2. Canal Criptográfico Ativo & Cipher Audit:</span>",
-            "  • Status de Validação: <span class='green'>VÁLIDO / CONFIÁVEL</span>",
-            "  • Cipher Ativa:   <span class='green'>TLS_AES_256_GCM_SHA384 (FORTE)</span>",
-            "  • TLS Negociado:  <span class='cyan'>TLSv1.3</span>"
+            "<span class='cyan'>Active Cryptographic Channel:</span>",
+            "  • Certificate Trust: <span class='green'>VALID & TRUSTED</span>",
+            "  • Negotiated Cipher: <span class='green'>TLS_AES_256_GCM_SHA384 (STRONG)</span>",
+            "  • Protocol Version:  <span class='cyan'>TLSv1.3</span>"
         ]
     },
     {
         cmd: "netflow --port 2055 --filter-ip 192.168.1.100",
         delay: 2500,
         output: [
-            "<span class='cyan'>✓ Coletor NetFlow v5 ativo na porta UDP 2055...</span>",
-            "<span class='yellow'>  Preparando painel interativo... (Aguarde)</span>",
-            "  • Filtro NOC Ativo:  <span class='yellow'>Filtrando por IP: 192.168.1.100</span>",
-            "  • Velocímetro (30s): [<span class='green'>▄▆█▆▄▃      █</span>] (Max: 800.00 Kbps)",
-            "  • Throughput Total:  <span class='yellow'>800.00 Kbps</span> | Down: 500.00 Kbps | Up: 300.00 Kbps",
+            "<span class='cyan'>✓ NetFlow v5 collector listening on UDP port 2055...</span>",
+            "<span class='yellow'>  Building dashboard view...</span>",
+            "  • Active Filter:     <span class='yellow'>IP: 192.168.1.100</span>",
+            "  • Speedometer (30s): [<span class='green'>▄▆█▆▄▃      █</span>] (Peak: 800.00 Kbps)",
+            "  • Total Throughput:  <span class='yellow'>800.00 Kbps</span> | Down: 500.00 Kbps | Up: 300.00 Kbps",
             "",
-            "<span class='cyan'> [2] ROTEADORES EXPORTADORES / ROUTERS EMITTING FLOWS</span>",
+            "<span class='cyan'> [2] EXPORTING ROUTERS</span>",
             "  192.168.1.1        | <span class='yellow'>800.00 Kbps</span>  | <span class='green'>Cisco Systems</span>                | 120",
             "",
-            "<span class='cyan'> [5] CONGESTIONAMENTO DE INTERFACES SNMP / SNMP INTERFACE PROFILER</span>",
-            "  IfIndex 1  |      1.50 MB |      0.00 MB | <span class='red'>CONGESTIONADO              (60.0%)</span>",
-            "  IfIndex 2  |      0.00 MB |      1.00 MB | <span class='yellow'>CARGA ALTA                 (40.0%)</span>"
+            "<span class='cyan'> [5] SNMP PHYSICAL INTERFACE PROFILES</span>",
+            "  IfIndex 1  |      1.50 MB |      0.00 MB | <span class='red'>HIGH CONGESTION             (60.0%)</span>",
+            "  IfIndex 2  |      0.00 MB |      1.00 MB | <span class='yellow'>MODERATE LOAD               (40.0%)</span>"
         ]
     }
 ];
@@ -392,7 +392,7 @@ function renderTools() {
         toolsGrid.innerHTML = `
             <div class="glass-panel" style="grid-column: 1 / -1; padding: 40px; text-align: center; color: var(--text-secondary);">
                 <i class="fa-solid fa-face-frown" style="font-size: 2.5rem; color: var(--text-muted); margin-bottom: 16px;"></i>
-                <p>Nenhuma ferramenta encontrada com os filtros e termos inseridos.</p>
+                <p>No tools matched your search criteria.</p>
             </div>
         `;
         return;
@@ -410,8 +410,8 @@ function renderTools() {
                 <span class="tool-category-badge cat-${tool.category}">${tool.category}</span>
             </div>
             <h3>${tool.name}</h3>
-            <p><strong>Propósito:</strong> ${tool.desc}</p>
-            <p><strong>Como usar:</strong> <em>${tool.use}</em></p>
+            <p><strong>Purpose:</strong> ${tool.desc}</p>
+            <p><strong>Usage:</strong> <em>${tool.use}</em></p>
             <div class="tool-keyword-list">
                 ${kwHTML}
             </div>
@@ -462,11 +462,11 @@ function copyPixKey() {
     
     const icon = document.getElementById("pix-icon");
     const btn = document.querySelector(".btn-copy-pix");
-    btn.innerHTML = `<i class="fa-solid fa-circle-check"></i> Copiado!`;
+    btn.innerHTML = `<i class="fa-solid fa-circle-check"></i> Copied!`;
     btn.style.borderColor = "var(--green)";
     
     setTimeout(() => {
-        btn.innerHTML = `<i id="pix-icon" class="fa-regular fa-copy"></i> Copiar`;
+        btn.innerHTML = `<i id="pix-icon" class="fa-regular fa-copy"></i> Copy`;
         btn.style.borderColor = "";
     }, 2000);
 }
