@@ -15,7 +15,7 @@ Reestruturado de um script monolítico para um pacote modular moderno, o Aurea �
 O AureaTools é um projeto livre e mantido voluntariamente pela comunidade. Se o Aurea economizou seu tempo em operações de NOC, troubleshooting de rotas ou auditorias BGP, considere apoiar nosso desenvolvimento!
 
 * **🔗 Linktree de Doações:** [https://js-victr.github.io/aurea-tools/donate](https://js-victr.github.io/aurea-tools/donate)
-* **🔑 Chave Pix (Brasil):** `vitords1082@gmail.com`
+* **🔑 Chave Pix (Brasil):** `45984313318`
 * **⭐ GitHub Sponsors:** [https://github.com/sponsors/js-victr](https://github.com/sponsors/js-victr)
 
 ---

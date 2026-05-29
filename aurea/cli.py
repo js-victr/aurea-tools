@@ -141,7 +141,7 @@ def display_donation_screen():
     if t("ui.default") == "padrão":
         pix_lbl = t('ui.donation.pix')
         print(f"{colors.cyan('║')}{colors.yellow(pix_lbl):^{min(width, 70) + 9}}{colors.cyan('║')}")
-        print(f"{colors.cyan('║')}{colors.bold('      apoio@aureatools.com'):^{min(width, 70) + 9}}{colors.cyan('║')}")
+        print(f"{colors.cyan('║')}{colors.bold('      45984313318'):^{min(width, 70) + 9}}{colors.cyan('║')}")
         print(f"{colors.cyan('║')}{' ':^{min(width, 70)}}{colors.cyan('║')}")
         
     # GitHub Sponsors

@@ -15,7 +15,7 @@ Re-architected from a monolithic script into a modern modular package, Aurea is 
 AureaTools is a community-driven, free open-source project. If Aurea has saved you time in your NOC operations or internet routing troubleshooting, consider supporting our development! 
 
 * **🔗 Donation Hub / Linktree:** [https://js-victr.github.io/aurea-tools/donate](https://js-victr.github.io/aurea-tools/donate)
-* **🔑 Pix Key (Brazil):** `vitords1082@gmail.com`
+* **🔑 Pix Key (Brazil):** `45984313318`
 * **⭐ GitHub Sponsors:** [https://github.com/sponsors/js-victr](https://github.com/sponsors/js-victr)
 
 ---
