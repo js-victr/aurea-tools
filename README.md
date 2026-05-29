@@ -16,7 +16,6 @@ AureaTools is a community-driven, free open-source project. If it has saved you 
 
 * **🔗 Donation Portal:** [https://js-victr.github.io/aurea-tools/#donate](https://js-victr.github.io/aurea-tools/#donate)
 * **🔑 Pix Key (Brazil):** `45984313318`
-* **⭐ GitHub Sponsors:** [https://github.com/sponsors/js-victr](https://github.com/sponsors/js-victr)
 
 ---
 
