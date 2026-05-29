@@ -35,8 +35,7 @@ def display_categories_menu():
         print(f"  {colors.dim(t('ui.recent'))}: {colors.dim(hist_str)}")
         
     # Footers
-    lang_toggle_lbl = "[L] Idioma/Lang"
-    print(f"\n  {colors.yellow(t('ui.donate_hint')):<38}  {colors.dim(lang_toggle_lbl)}")
+    print(f"\n  {colors.yellow(t('ui.donate_hint')):<38}")
     print(f"  {colors.dim(t('ui.search_hint')):<38}  {colors.dim(t('ui.exit_hint'))}")
     print(colors.cyan("═" * min(width, 87)))
 
@@ -175,14 +174,6 @@ def interactive_loop():
                 ui.clear_screen()
                 print(colors.green(t("ui.exiting")))
                 break
-                
-            if choice.lower() == "l":
-                current = get_locale()
-                new_locale = "en_US" if current == "pt_BR" else "pt_BR"
-                from aurea.core import config
-                config.get_instance().set("locale", new_locale)
-                i18n.init(new_locale)
-                continue
                 
             if choice.lower() == "d":
                 display_donation_screen()

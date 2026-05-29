@@ -16,9 +16,6 @@ _strings: dict = {}
 _loaded: bool = False
 
 SUPPORTED_LOCALES = {
-    "pt": "pt_BR",
-    "pt_br": "pt_BR",
-    "pt_BR": "pt_BR",
     "en": "en_US",
     "en_us": "en_US",
     "en_US": "en_US",
@@ -26,35 +23,12 @@ SUPPORTED_LOCALES = {
 
 
 def _detect_system_locale() -> str:
-    """Detect system locale and map to supported locale."""
-    try:
-        sys_locale = locale.getlocale()[0] or ""
-    except Exception:
-        sys_locale = ""
-
-    # Check environment variables (common in Linux/Termux)
-    for env_var in ("LANG", "LC_ALL", "LC_MESSAGES", "LANGUAGE"):
-        val = os.environ.get(env_var, "")
-        if val:
-            sys_locale = val
-            break
-
-    sys_locale = sys_locale.split(".")[0]  # Remove encoding (e.g., .UTF-8)
-
-    if sys_locale in SUPPORTED_LOCALES:
-        return SUPPORTED_LOCALES[sys_locale]
-
-    # Try language prefix (e.g., "pt" from "pt_BR")
-    lang = sys_locale.split("_")[0].lower()
-    if lang in SUPPORTED_LOCALES:
-        return SUPPORTED_LOCALES[lang]
-
     return "en_US"
 
 
 def _load_locale(locale_code: str) -> dict:
     """Load a locale JSON file."""
-    filepath = _LOCALES_DIR / f"{locale_code}.json"
+    filepath = _LOCALES_DIR / "en_US.json"
     if not filepath.exists():
         return {}
     with open(filepath, "r", encoding="utf-8") as f:
@@ -62,28 +36,10 @@ def _load_locale(locale_code: str) -> dict:
 
 
 def init(locale_override: str | None = None):
-    """
-    Initialize the i18n system.
-
-    Args:
-        locale_override: Force a specific locale (e.g., "pt", "en").
-                        If None, auto-detects from system.
-    """
+    """Initialize the i18n system in English only."""
     global _current_locale, _strings, _loaded
-
-    if locale_override:
-        key = locale_override.lower().replace("-", "_")
-        _current_locale = SUPPORTED_LOCALES.get(key, "en_US")
-    else:
-        _current_locale = _detect_system_locale()
-
-    _strings = _load_locale(_current_locale)
-
-    # Fallback to en_US if strings are empty
-    if not _strings and _current_locale != "en_US":
-        _strings = _load_locale("en_US")
-        _current_locale = "en_US"
-
+    _current_locale = "en_US"
+    _strings = _load_locale("en_US")
     _loaded = True
 
 

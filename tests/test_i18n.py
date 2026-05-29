@@ -30,10 +30,10 @@ class TestI18n(unittest.TestCase):
         # When key not found, it should return the key itself
         self.assertEqual(t("non.existent.key"), "non.existent.key")
 
-    def test_pt_br_translation(self):
+    def test_fallback_to_english_on_unsupported_locale(self):
         i18n.init("pt")
-        self.assertEqual(t("ui.press_enter"), "Pressione ENTER para voltar ao menu...")
-        self.assertEqual(t("tools.info_local_network.name"), "IP Local & Interfaces")
+        self.assertEqual(t("ui.press_enter"), "Press ENTER to return to menu...")
+        self.assertEqual(t("tools.info_local_network.name"), "Local IP & Interfaces")
 
 
 if __name__ == "__main__":

@@ -66,12 +66,8 @@ def tool(
             
             # 1. Look up description and usage
             guide = TOOL_GUIDES.get(number, {})
-            locale = get_locale() or "pt_BR"
-            lang = "pt" if locale.startswith("pt") else "en"
-            
-            guide_lang = guide.get(lang, guide.get("pt", {}))
-            desc = guide_lang.get("desc", "")
-            use = guide_lang.get("use", "")
+            desc = guide.get("desc", "")
+            use = guide.get("use", "")
             
             # 2. Print beautiful manual/guide box
             if desc or use:
@@ -93,18 +89,18 @@ def tool(
                             print(f"{cyan('│')} {padded_line} {cyan('│')}")
 
                 if desc:
-                    desc_lbl = "PROPÓSITO" if lang == "pt" else "PURPOSE"
+                    desc_lbl = "PURPOSE"
                     print_wrapped_line(bold(green(desc_lbl)), len(desc_lbl), desc)
                 if use:
-                    use_lbl = "COMO USAR" if lang == "pt" else "HOW TO USE"
+                    use_lbl = "HOW TO USE"
                     print_wrapped_line(bold(yellow(use_lbl)), len(use_lbl), use)
                     
                 print(cyan("└" + "─" * 78 + "┘\n"))
                 
             # 3. Print verbose status
             from aurea.core.ui import verbose
-            verbose(f"Iniciando ferramenta #{number}: {name} ({category})")
-            verbose("Carregando subsistemas do Core, cores ANSI e verificando chaves de API...")
+            verbose(f"Starting tool #{number}: {name} ({category})")
+            verbose("Loading core subsystems, ANSI colors, and validating API keys...")
             
             # 4. Call actual tool function
             return func(*args, **kwargs)

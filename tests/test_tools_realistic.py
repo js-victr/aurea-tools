@@ -163,7 +163,7 @@ class TestToolsRealistic(unittest.TestCase):
             sys.stdout = sys.__stdout__
 
         output_str = captured_output.getvalue()
-        self.assertIn("DNS BENCHMARK LOCAL", output_str)
+        self.assertIn("LOCAL DNS BENCHMARK", output_str)
         self.assertIn("Google DNS", output_str)
         mock_pause.assert_called_once()
 
@@ -206,7 +206,7 @@ class TestToolsRealistic(unittest.TestCase):
             sys.stdout = sys.__stdout__
 
         output_str = captured_output.getvalue()
-        self.assertIn("AUREA NET ATIVA", output_str)
+        self.assertIn("AUREA NET ACTIVE", output_str)
         self.assertIn("TCP", output_str)
         self.assertIn("192.168.0.2:50443", output_str)
         self.assertIn("8.8.8.8:443", output_str)
